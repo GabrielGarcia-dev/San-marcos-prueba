@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Views/Footer/footer.css">
+    <link rel="stylesheet" href="./Views/Header/header.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Styles/Home.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+    
+
+
+<div class="slider">
+    <div class="slides">
+        <div class="slide"><a href="/San Marcos Web Es/Views/Galeria.html"><img src="/San Marcos Web Es/Images/Home/BannerWeb_SanMarcos_SabordelAno2024_02.webp" alt="Imagen 1"></a></div>
+        <div class="slide"><a href="/San Marcos Web Es/Views/Recetas.html"><img src="/San Marcos Web Es/Images/Home/JalapenosRellenos_PortadaHome.webp" alt="Imagen 2"></a></div>
+        <div class="slide"><img src="/San Marcos Web Es/Images/Home/portadashome1.webp" alt="Imagen 3"></div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+    <div class="contenido">
+        <div class="titulo">
+            <h1>Cocina con San Marcos</h1>
+        </div>
+        <div class="descripcion">
+            <p>Descubre las diversas categorías para darle un toque único a tu cocina. 
+                Valoramos el amor por la cocina y ofrecemos productos de alta calidad 
+                para madres que disfrutan cocinar. Desde salsas picantes hasta chiles 
+                enlatados, San Marcos te ayuda a crear sabores auténticos y deliciosos. 
+                Elige entre nuestras opciones y transforma tus comidas en experiencias llenas de sabor.</p>
+        </div>
+    </div>
+
+    <div class="icon-container">
+        <div class="icon-item">
+            <a href="./Views/Recetas/Recetas-Pollo/Recetas-pollo.html">
+                <img src="/San Marcos Web Es/Images/De-cocina-y-mas/pollo.webp" alt="Pollo">
+            </a>
+            <p>Pollo</p>
+        </div>
+        <div class="icon-item">
+            <a href="./Views/Recetas/Recetas-Res/Recetas-res.html">
+                <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Res.webp" alt="Res / Cerdo">
+            </a>            
+            <p>Res / Cerdo</p>
+        </div>
+        <div class="icon-item">
+            <a href="./Views/Recetas/Recetas-Pescado/Recetas-pescado.html">
+                <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Pescado.webp" alt="Pescado">
+            </a>
+            <p>Pescado</p>
+        </div>
+        <div class="icon-item">
+            <a href="./Views/Recetas/Recetas-Pasta/Recetas-pasta.html">
+                <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Paste.webp" alt="Pasta">
+            </a>
+            <p>Pasta</p>
+        </div>
+        <div class="icon-item">
+            <a href="./Views/Recetas/Recetas Chile/Recetas-chiles.html">
+                <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Chile.webp" alt="Chile">
+            </a>
+                <p>Chile</p>
+        </div>
+        <div class="icon-item">
+            <a href="./Views/Recetas/Recetas -Verduras/Recetas-verdura.html">
+                <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Verdura.webp" alt="Verdura">
+            </a>
+            <p>Verdura</p>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <a href="./Views/De-cocina-y-mas.html"><button>Más recetas</button></a>
+    </div>
+
+    <div class="contenido2">
+        <div class="titulo2">
+            <h1>Descubre nuestros productos</h1>
+        </div>
+    </div>
+
+    <div class="slider-standars1">
+        <div class="slider001">
+            <div class="slide-track">
+                <div class="slide001">
+                    <a href="./Views/Productos/Chiles/Chiles.html">
+                        <img src="./Images/Home/Prodct_chil_name.webp" alt="ya">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Frijoles/Frijoles.html">
+                        <img src="./Images/Home/Prodct_frij_nameV2.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Frutas/Frutas.html">
+                        <img src="./Images/Home/Prodct_frut_name.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Salsas/Salsas.html">
+                        <img src="./Images/Home/Prodct_sals_name.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Verduras/Verduras.html">
+                        <img src="./Images/Home/Prodct_verd_name.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Vinagre/Vinagre.html">
+                        <img src="./Images/Home/Prodct_vinag_name.webp" alt="ya">
+                    </a>
+                </div>
+
+                
+                <div class="slide001">
+                    <a href="./Views/Productos/Chiles/Chiles.html">
+                        <img src="./Images/Home/Prodct_chil_name.webp" alt="ya">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Frijoles/Frijoles.html">
+                        <img src="./Images/Home/Prodct_frij_nameV2.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Frutas/Frutas.html">
+                        <img src="./Images/Home/Prodct_frut_name.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Salsas/Salsas.html">
+                        <img src="./Images/Home/Prodct_sals_name.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Verduras/Verduras.html">
+                        <img src="./Images/Home/Prodct_verd_name.webp" alt="">
+                    </a>
+                </div>
+                <div class="slide001">
+                    <a href="./Views/Productos/Vinagre/Vinagre.html">
+                        <img src="./Images/Home/Prodct_vinag_name.webp" alt="ya">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container02">
+        <div class="contenido3">
+            <div class="titulo3">
+                <h1>De México para el mundo</h1>
+            </div>
+            <br>
+            <div class="descripcion">
+                <p>En San Marcos, entendemos la importancia de ofrecer productos de calidad excepcional. Desde 
+                    el primer paso hasta el último, nos esforzamos por mantener los más altos estándares en cada 
+                    aspecto de nuestro proceso. Utilizamos procesos eficientes y rigurosos controles de calidad
+                    para asegurarnos de que cada producto que sale de nuestras instalaciones cumpla con los más 
+                    altos estándares de frescura, sabor y calidad. En San Marcos, la calidad es nuestra prioridad 
+                    y siempre trabajamos arduamente para cumplir con ese compromiso.</p>
+            </div>
+        </div>
+        <div class="container6">
+            <div class="left-column3">
+                <div class="block3">Compromiso con la calidad</div>
+                <div class="block3">Sabor auténtico y característico</div>
+            </div>
+            <div class="center-image3">
+                <img src="./Images/Home/familia_salsa-q6wpcruryc2k8am8kzqowegx70ehfcf8jmzpsckak0.webp" alt="Productos San Marcos">
+            </div>
+            <div class="right-column3">
+                <div class="block3">Procesos de producción eficientes</div>
+                <div class="block3">Selección de producto de calidad</div>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="./San Marcos Web Es/Views/De-mexico-para-el-mundo.html"><button>Leer más</button></a>
+        </div>
+    </div>
+    
+    <div class="contenido4">
+        <video src="/San Marcos Web Es/Images/Home/chipotle_com.mp4" autoplay muted loop></video>
+    </div>
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Views/Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+
+<script src="/San Marcos Web Es/Js/Home.js"></script>
+</body>
+</html>

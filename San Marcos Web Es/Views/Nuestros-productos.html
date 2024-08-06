@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto</title>
+    <link rel="stylesheet" href="/San Marcos Web Es/Styles/Nuestros-productos.css">
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="stylesheet" href="./Header/header.css">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+
+    <div class="wrapper">
+        <img class="Background01" src="/San Marcos Web Es/Images/Nuestros-productos/Background01.jpg" alt="">
+        <img class="Separator02" src="/San Marcos Web Es/Images/Nuestros-productos/Separator.webp" alt=""> 
+    </div>
+
+    <section>
+        <p class="section01">Nuestros Productos</p>
+        <img class="Separator03" src="/San Marcos Web Es/Images/Nuestros-productos/Separator.webp" alt="">
+    </section>   
+
+    <div class="container">
+        <a class="categoria" href="/San Marcos Web Es/Views/Productos/Chiles/Chiles.html">
+            <img src="/San Marcos Web Es/Images/Nuestros-productos/Chiles.webp" alt="Chiles">
+            <h2>Chiles</h2>
+        </a>
+        <a class="categoria" href="/San Marcos Web Es/Views/Productos/Frijoles/Frijoles.html">
+            <img src="/San Marcos Web Es/Images/Nuestros-productos/Frijoles.webp" alt="Frijoles">
+            <h2>Frijoles</h2>
+        </a>
+        <a class="categoria" href="/San Marcos Web Es/Views/Productos/Frutas/Frutas.html">
+            <img src="/San Marcos Web Es/Images/Nuestros-productos/Frutas.webp" alt="Frutas">
+            <h2>Frutas</h2>
+        </a>
+        <a class="categoria" href="/San Marcos Web Es/Views/Productos/Salsas/Salsas.html">
+            <img src="/San Marcos Web Es/Images/Nuestros-productos/Salsas.webp" alt="Salsas">
+            <h2>Salsas</h2>
+        </a>
+        <a class="categoria" href="/San Marcos Web Es/Views/Productos/Verduras/Verduras.html">
+            <img src="/San Marcos Web Es/Images/Nuestros-productos/Verduras.webp" alt="Verduras">
+            <h2>Verduras</h2>
+        </a>
+        <a class="categoria" href="/San Marcos Web Es/Views/Productos/Vinagre/Vinagre.html">
+            <img src="/San Marcos Web Es/Images/Nuestros-productos/Vinagre.webp" alt="Vinagre">
+            <h2>Vinagre</h2>
+        </a>
+    </div>
+
+    <div class="background001">
+        <img class="Separator04" src="/San Marcos Web Es/Images/Nuestros-productos/Desvanecido.png" alt="">
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script src="/San Marcos Web Es/Js/Nuestros-productos.js"></script>
+</body>
+</html>

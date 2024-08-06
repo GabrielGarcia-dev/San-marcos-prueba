@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Recetas-pasta.css">
+    <link rel="stylesheet" href="../../../Views/Footer/footer.css">
+    <link rel="stylesheet" href="../../Header/header.css">
+    <title></title>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../../Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                });
+        });
+    </script>
+
+    <div class="container1">
+        <div class="titulo">Pasta Recipes</div>
+        <p>At San Marcos, we are excited to present a variety of irresistible recipes that combine delicious pasta with our San Marcos products. Our products highlight the authentic flavors of Italian cuisine with a Mexican twist. Whether you prefer a classic pasta like spaghetti or venture into more creative options like lasagna, at San Marcos we have everything you need to create dishes full of flavor and tradition. Join us on this culinary journey and discover how our San Marcos products can elevate your pasta recipes to new heights of flavor and delight. Get ready to enjoy an explosion of delicious flavors in every bite of pasta!</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item" data-recipe="coditos-atun">
+            <div class="image-container">
+                <img src="./Recetas-Pasta/coditos_atun.webp" alt="Centered image">
+                <div class="overlay">Coditos with Tuna and Chipotle</div>
+            </div>
+            <div class="name">Coditos with Tuna and Chipotle</div>
+        </div>
+        <div class="grid-item" data-recipe="sopa-codito">
+            <div class="image-container">
+                <img src="./Recetas-Pasta/sopa-de-codito-hawaiana (1).webp" alt="Centered image">
+                <div class="overlay">Hawaiian Macaroni Soup</div>
+            </div>
+            <div class="name">Hawaiian Macaroni Soup</div>
+        </div>
+        <div class="grid-item" data-recipe="salchichas-pasta">
+            <div class="image-container">
+                <img src="./Recetas-Pasta/Salchichas-y-pasta-al-chipotle.webp" alt="Centered image">
+                <div class="overlay">Chipotle Sausages and Pasta</div>
+            </div>
+            <div class="name">Chipotle Sausages and Pasta</div>
+        </div>
+    </div>
+    <div class="image-background">
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const recipe = this.getAttribute('data-recipe');
+                window.location.href = `./receta.html?recipe=${recipe}`;
+            });
+        });
+    </script>
+</body>
+</html>

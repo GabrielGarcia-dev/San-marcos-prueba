@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sostenibilidad - Alimentos San Marcos</title>
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="stylesheet" href="./Header/header.css">
+    <link rel="stylesheet" href="../Styles/Reporte-Sostenibilidad.css">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web En/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+
+    <div class="welcome-container">
+        <img src="../Images/Reporte-Sostenibilidad/Fondo.png" alt="">
+    </div>
+
+    <div class="container01">
+        <h1>Sustainability Report</h1>
+        <div class="sub-container01">
+            <div class="text01">
+                <p>Mexican food is not only spicy by nature, it’s spicy because it’s mexican. And that’s what makes it unique, like our chipotles and jalapeños, give your dishes a unique flavor and enjoy this delicious taste full of tradition.
+                    More than 6000 hectares are dedicated to its cultivation.</p>
+                <p>Our growth and value are maximized when we transform ourselves to grow and build a better world. We are part of the solutions, integrating the social, environmental and governance dimensions as the engine of our strategy and creation of shared value.</p>
+                <button>Ver reporte</button>
+            </div>
+            <div class="image01">
+                <img src="../Images/Reporte-Sostenibilidad/reporte2022_eng.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container02">
+        <h1>Sustainability Report</h1>
+        <div class="image02">
+            <img src="../Images/Reporte-Sostenibilidad/familia_salsa.webp" alt="">
+        </div>
+        <div class="sub-container02">
+            <div class="text02">
+                <p>Mexican food is not only spicy by nature, it’s spicy because it’s mexican. And that’s what makes it unique, like our chipotles and jalapeños, give your dishes a unique flavor and enjoy this delicious taste full of tradition.
+                    More than 6000 hectares are dedicated to its cultivation.</p>
+                <p>Our growth and value are maximized when we transform ourselves to grow and build a better world. We are part of the solutions, integrating the social, environmental and governance dimensions as the engine of our strategy and creation of shared value.</p>
+                <button>Ver reporte</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-standars">
+        <br>
+        <h1>Normas y Certificaciones</h1>
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_HechoEnMexico-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/FDA-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Gluttenfree-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/hand-select-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/ideal-for-mexican-dishes-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/choleterol-free-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/special-accompaniment-to-your-dishes-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/vegan-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/no-preservatives-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/traditional-mexican-harvest-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/plant-based-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/fresh-vegetables-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/low-calorine-per-serving-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/original-recipe-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/FSSC-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Halal-150x150.webp" alt="">
+                </div>
+    
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_HechoEnMexico-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/FDA-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Gluttenfree-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/hand-select-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/ideal-for-mexican-dishes-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/choleterol-free-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/special-accompaniment-to-your-dishes-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/vegan-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/no-preservatives-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/traditional-mexican-harvest-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/plant-based-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/fresh-vegetables-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/low-calorine-per-serving-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/original-recipe-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/FSSC-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Halal-150x150.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

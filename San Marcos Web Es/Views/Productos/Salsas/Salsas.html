@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista de Producto</title>
+    <link rel="stylesheet" href="./Salsas.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Views/Header/header.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Views/Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+    <div class="product-container">
+        <div class="product-info">
+            <h2 id="product-category">Salsas</h2>
+            <p id="product-description">Hemos llevado las salsas a un nivel completamente nuevo, añadiendo un toque de autenticidad a cada bocado. Nuestras salsas son el resultado de una cuidadosa selección de los ingredientes más frescos y sabrosos, combinados con la pasión y el conocimiento de nuestra tradición culinaria. Desde la suave y ahumada salsa chipotle hasta la intensidad explosiva de la salsa habanera, en San Marcos tenemos una variedad de salsas que elevarán tus platillos a nuevas alturas de sabor. Únete a nosotros en este viaje lleno de picante y descubre cómo nuestras salsas pueden transformar tus comidas en una experiencia única y llena de sabor mexicano. ¡Prepárate para disfrutar de una explosión de sabores que te dejará deseando más!</p>
+        </div>
+        <br>
+        <div class="product-details">
+            <div class="product-text">
+                <p id="product-weight">Lata: 215g Frasco: 500g</p>
+                <h1 id="product-title">Salsa Casera</h1>
+                <p id="product-info">Nuestra salsa mexicana está hecha con el verdadero estilo casero y la combinación de los mejores ingredientes.</p>
+                <a id="product-link" href="./Info-salsas.html?product=chicharos">
+                    <button class="button01">
+                        <span>VER MÁS ></span>
+                    </button>
+                </a>
+            </div>
+            <div class="product-image">
+                <img id="product-image" src="./Image-salsas/AnyConv.com__salsa-casera.webp" alt="Chícharos con Zanahoria">
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        <div class="button-container">
+          <div class="button" id="prev-button">
+              <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="button" id="next-button">
+              <i class="fas fa-chevron-right"></i> 
+          </div>
+      </div>
+
+      <br>
+      <br>
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script src="./Salsas.js"></script>
+</body>
+</html>

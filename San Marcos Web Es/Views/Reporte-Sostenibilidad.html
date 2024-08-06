@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sostenibilidad - Alimentos San Marcos</title>
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="stylesheet" href="./Header/header.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Styles/Reporte-Sostenibilidad.css">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+    
+    <div class="welcome-container">
+        <img src="../Images/Reporte-Sostenibilidad/Fondo.png" alt="">
+    </div>
+
+    <div class="container01">
+        <h1>Reporte de Sostenibilidad</h1>
+        <div class="sub-container01">
+            <div class="text01">
+                <p>La comida mexicana no sólo es picosa por naturaleza, es picosa porque es mexicana. Y eso es lo que la hace única, como nuestros chipotles y jalapeños, dale a tus platillos un sabor único y disfruta de este delicioso sabor lleno de tradición.
+                Más de 6000 hectáreas se dedican a su cultivo.</p>
+                <p>Nuestro crecimiento y valor se maximizan cuando nos transformamos para crecer y para construir un mundo mejor. Somos parte de las soluciones, integrando las dimensiones social, ambiental y de gobernanza como motor de nuestra estrategia y creación de valor compartido.</p>
+                <button>Ver reporte</button>
+            </div>
+            <div class="image01">
+                <img src="../Images/Reporte-Sostenibilidad/ChilesSM.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="slider-standars">
+        <br>
+        <h1>Normas y Certificaciones</h1>
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_HechoEnMexico-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/ESR-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/SNconservadoress-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_recetaoriginal-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_bajo-en-calorias-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_vegetales-frescos-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_abasedeplantas-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Cosechamexicana-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_vegano-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_acompanamientoaplatillos-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Colesterol-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_idealparaplatillos-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Selecionados-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Kosher-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/FSSC-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Halal-150x150.webp" alt="ya">
+                </div>
+
+                
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_HechoEnMexico-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/ESR-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/SNconservadoress-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_recetaoriginal-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_bajo-en-calorias-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_vegetales-frescos-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_abasedeplantas-150x150.webp" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Cosechamexicana-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_vegano-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_acompanamientoaplatillos-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Colesterol-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_idealparaplatillos-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Selecionados-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Kosher-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/FSSC-150x150.webp" alt="ya">
+                </div>
+                <div class="slide">
+                    <img src="../Images/Reporte-Sostenibilidad/NCW_Halal-150x150.webp" alt="ya">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

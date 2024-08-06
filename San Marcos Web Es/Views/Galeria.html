@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes con Footer - San Marcos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="stylesheet" href="./Header/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        /* Estilos para asegurar que las imágenes ocupen toda la pantalla */
+        .full-screen {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover; /* Ajuste para asegurar que la imagen se ajuste sin cortarse */
+        }
+        /* Establece un tamaño fijo para todas las imágenes */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Estilos para el footer */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+    
+<div class="container-fluid">
+    <div class="row">
+        <!-- Imágenes de la galería -->
+        <div class="col-md-12 gallery-item">
+            <img src="/San Marcos Web Es/Images/Galeria/1.png" class="img-fluid full-screen" alt="Imagen 1">
+        </div>
+        <div class="col-md-12 gallery-item">
+            <img src="/San Marcos Web Es/Images/Galeria/2.png" class="img-fluid full-screen" alt="Imagen 2">
+        </div>
+        <div class="col-md-12 gallery-item">
+            <img src="/San Marcos Web Es/Images/Galeria/3.png" class="img-fluid full-screen" alt="Imagen 3">
+        </div>
+        <div class="col-md-12 gallery-item">
+            <img src="/San Marcos Web Es/Images/Galeria/4.png" class="img-fluid full-screen" alt="Imagen 4">
+        </div>
+        <div class="col-md-12 gallery-item">
+            <img src="/San Marcos Web Es/Images/Galeria/5.png" class="img-fluid full-screen" alt="Imagen 5">
+        </div>
+        <div class="col-md-12 gallery-item">
+            <img src="/San Marcos Web Es/Images/Galeria/6.png" class="img-fluid full-screen" alt="Imagen 6">
+        </div>
+        <div class="col-md-12 gallery-item">
+            <img src="/San Marcos Web Es/Images/Galeria/7.png" class="img-fluid full-screen" alt="Imagen 7">
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

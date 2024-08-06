@@ -1,0 +1,275 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.title-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.title {
+    font-size: 40px;
+    color: #001F3F;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.yellow-bar {
+    width: 180px;
+    height: 10px;
+    background-color: #FFCC00;
+    margin: 0 auto;
+}
+
+.fixed-center {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.left-bar {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.image-container {
+    width: 500px;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 10px;
+    margin-top: 100px; 
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.bar-vertical {
+    width: 5px;
+    height: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+
+.yellow {
+    background-color: #FFCC00;
+}
+
+.blue {
+    background-color: #001F3F;
+}
+
+.text-container {
+    width: 100%;
+    text-align: left;
+}
+
+.text-container h2, .text-container h3 {
+    color: #001F3F;
+    font-size: 60px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.text-container p {
+    font-size: 25px;
+    color: #4A4A4A;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.text-container, .info-section {
+    max-width: 50%;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.text-container.delay, .info-section.delay {
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+
+@media (max-width: 920px) {
+    .title-bar-container {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .yellow-bar {
+        width: 100px;
+        margin: 10px auto;
+    }
+
+    .fixed-center {
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-bar {
+        width: 30px;
+        padding: 5px;
+        margin: 0 auto;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .bar-vertical {
+        width: 3px;
+        height: 30px;
+        transform: rotate(90deg);
+        margin: 5px;
+    }
+
+    .text-container h2, .text-container h3 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .text-container p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .text-container, .info-section {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .title-bar-container {
+        padding: 5px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .yellow-bar {
+        width: 100px;
+        margin: 10px auto;
+    }
+
+    .fixed-center {
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    .left-bar {
+        width: 30px;
+        padding: 5px;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .container {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bar-vertical {
+        width: 3px;
+        height: 30px;
+        transform: rotate(90deg);
+    }
+
+    .text-container h2, .text-container h3 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .text-container p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .text-container, .info-section {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+

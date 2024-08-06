@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Producto</title>
+    <link rel="stylesheet" href="./Info-frijoles.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Views/Header/header.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Views/Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="yellow-bar"></div>
+        <div class="content">
+            <div class="left-bar">
+                <div id="yellow-bar-vertical" class="bar-vertical yellow" onclick="showInfo('chicharos')"></div>
+                <div id="blue-bar-vertical" class="bar-vertical blue" onclick="showInfo('presentaciones')"></div>
+            </div>
+            <div class="text-container">
+                <div id="info-chicharos" class="info-section">
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div id="info-presentaciones" class="info-section hidden">
+                    <h3></h3>
+                    <p><br></p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img id="product-image" src="./Image-frijoles/frijoles-refritos-bayos_V2.webp" alt="San Marcos Chícharos con Zanahoria">
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script src="./Info-frijoles.js"></script>
+</body>
+</html>

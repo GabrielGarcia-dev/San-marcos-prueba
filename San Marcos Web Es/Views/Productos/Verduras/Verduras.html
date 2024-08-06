@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista de Producto</title>
+    <link rel="stylesheet" href="./Verduras.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Views/Header/header.css">
+    <link rel="stylesheet" href="/San Marcos Web Es/Views/Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+    <div class="product-container">
+        <div class="product-info">
+            <h2 id="product-category">Verduras</h2>
+            <p id="product-description">Sabemos que en las cocinas mexicanas las verduras ocupan un lugar especial, ya sea en guisos, ensaladas o como acompañamiento. Es por eso que nos esforzamos en seleccionar cuidadosamente las mejores verduras, cultivadas con amor y siguiendo los más altos estándares de calidad. Queremos que disfruten de la frescura y la autenticidad de nuestros productos, y que descubran nuevas formas de darle un toque especial a sus platillos favoritos. Únanse a nosotros y descubran cómo nuestras verduras San Marcos pueden hacer que cada comida sea un verdadero festín para sus sentidos. ¡Prepárense para disfrutar de la abundancia y el sabor natural que solo nuestras verduras pueden brindar!</p>
+        </div>
+        <br>
+        <div class="product-details">
+            <div class="product-text">
+                <p id="product-weight">430g</p>
+                <h1 id="product-title">Chícharos con Zanahoria</h1>
+                <p id="product-info">Nuestros chicharos con zanahoria son la perfecta combinación...</p>
+                <a id="product-link" href="./Info-Verduras.html?product=chicharos">
+                    <button class="button01">
+                        <span>VER MÁS ></span>
+                    </button>
+                </a>
+            </div>
+            <div class="product-image">
+                <img id="product-image" src="./Image-verduras/AnyConv.com__chicharosconzanahoria2.webp" alt="Chícharos con Zanahoria">
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        <div class="button-container">
+          <div class="button" id="prev-button">
+              <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="button" id="next-button">
+              <i class="fas fa-chevron-right"></i> 
+          </div>
+      </div>
+
+      <br>
+      <br>
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script src="./Verduras.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Recetas-pollo.css">
+    <link rel="stylesheet" href="../../../Views/Footer/footer.css">
+    <link rel="stylesheet" href="../../Header/header.css">
+    <title></title>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    fetch('../../../Views/Header/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            const menuIcon = document.getElementById('menuIcon');
+            const menuDropdown = document.getElementById('menuDropdown');
+
+            menuIcon.addEventListener('click', function() {
+                if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                    menuDropdown.style.display = "block";
+                } else {
+                    menuDropdown.style.display = "none";
+                }
+            });
+        });
+});
+    </script>
+    <div class="container1">
+        <div class="titulo">Chicken Recipes</div>
+        <p>At San Marcos, we understand how important it is for you to enjoy special moments in the kitchen. 
+            That’s why we’ve created a variety of chicken recipes using our San Marcos products 
+            to help you delight your loved ones with delicious and flavorful dishes. 
+            Join us on this culinary journey and discover how our products can add a unique touch to your creations. 
+            Get ready to surprise your family with irresistible recipes that only San Marcos can offer!</p>
+    </div>
+    
+    <div class="grid-container">
+        <div class="grid-item" data-recipe="pechugas-rellenas">
+            <div class="image-container">
+                <img src="./Recetas-pollo/Pechugas-rellenas-con-duraznos-San-Marcos.webp" alt="Centered image">
+                <div class="overlay">Stuffed Chicken Breasts with Peaches San Marcos</div>
+            </div>
+            <div class="name">Stuffed Chicken Breasts with Peaches San Marcos</div>
+        </div>
+        <div class="grid-item" data-recipe="taquitos-lechuga">
+            <div class="image-container">
+                <img src="./Recetas-pollo/Taquitos-de-lechuga-con-pollo-agripicante.webp" alt="Centered image">
+                <div class="overlay">Lettuce Taquitos with Spicy Chicken</div>
+            </div>
+            <div class="name">Lettuce Taquitos with Spicy Chicken</div>
+        </div>
+        <div class="grid-item" data-recipe="ensalada-pollo">
+            <div class="image-container">
+                <img src="./Recetas-pollo/Ensalada-de-pollo-con-vinagreta-y-rajas.webp" alt="Centered image">
+                <div class="overlay">Chicken Salad with Vinaigrette and Strips</div>
+            </div>
+            <div class="name">Chicken Salad with Vinaigrette and Strips</div>
+        </div>
+        <div class="grid-item" data-recipe="fajitas-pollo">
+            <div class="image-container">
+                <img src="./Recetas-pollo/Fajitas-de-pollo-al-chipotle.webp" alt="Centered image">
+                <div class="overlay">Chicken Fajitas with Chipotle</div>
+            </div>
+            <div class="name">Chicken Fajitas with Chipotle</div>
+        </div>
+        <div class="grid-item" data-recipe="wrap-pollo">
+            <div class="image-container">
+                <img src="./Recetas-pollo/wrap-pollo.webp" alt="Centered image">
+                <div class="overlay">Chicken Wrap</div>
+            </div>
+            <div class="name">Chicken Wrap</div>
+        </div>
+    </div>
+    
+    <div class="image-background">
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const recipe = this.getAttribute('data-recipe');
+                window.location.href = `receta.html?recipe=${recipe}`;
+            });
+        });
+    </script>
+</body>
+</html>

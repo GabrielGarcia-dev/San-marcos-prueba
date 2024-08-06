@@ -1,0 +1,476 @@
+.container01 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0300630f; /* Fondo similar al de la imagen */
+    height: 600px; /* Altura fija de 300px */
+}
+
+.text01 {
+    max-width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.text01 h1 {
+    font-size: 2.5em;
+    color: #0c194b;
+    margin-bottom: 10px;
+}
+
+.text01 p {
+    font-size: 0.9em;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.text01 h2 {
+    font-size: 1.2em;
+    color: #0c194b;
+    margin-top: 20px;
+}
+
+.text01 h4 {
+    font-size: 0.9em;
+    color: #0c194b;
+    margin-top: 5px;
+    position: relative;
+}
+
+.text01 h4::after {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background-color: #ffcc00; /* Color de la línea amarilla */
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image01 {
+    flex-shrink: 0;
+    margin-left: 10px;
+    max-height: 100%;
+}
+
+.image01 img {
+    height: 550px;
+    width: auto;
+}
+
+.container02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto; /* Asegura que el contenedor esté centrado horizontalmente */
+}
+
+.image02 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image02 img {
+    border-radius: 50%;
+    width: 300px; /* Ajusta este valor según sea necesario */
+    height: auto;
+}
+
+.text02 {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.text02 h1 {
+    font-size: 2em;
+    color: #0D326D; /* Ajusta el color según sea necesario */
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Centra el texto del título */
+}
+
+.text02 p {
+    margin: 20px 0;
+    color: #333; /* Ajusta el color según sea necesario */
+}
+
+.text02 button {
+    background-color: #007BFF; /* Ajusta el color según sea necesario */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block; /* Asegura que el botón esté centrado */
+}
+
+.text02 button:hover {
+    background-color: #0056b3; /* Ajusta el color según sea necesario */
+}
+
+.container03 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0300630f;
+}
+
+.text03 {
+    width: 80%;
+    height: 200px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.text03 h1 {
+    font-size: 2em;
+    color: #0D326D; /* Ajusta el color según sea necesario */
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Centra el texto del título */
+}
+
+.text03 p {
+    margin: 20px 0;
+    color: #333;
+}
+
+.text03 b {
+    color: #2b72e4; /* Ajusta el color según sea necesario */
+}
+
+.container04 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.text04 {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.text04 h1 {
+    font-size: 2em;
+    color: #0D326D; /* Ajusta el color según sea necesario */
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Centra el texto del título */
+}
+
+.image04 img {
+    border-radius: 50%;
+    width: 300px; /* Ajusta este valor según sea necesario */
+    height: auto;
+}
+
+.text04 button {
+    background-color: #007BFF; /* Ajusta el color según sea necesario */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block; /* Asegura que el botón esté centrado */
+}
+
+.text04 button:hover {
+    background-color: #0056b3; /* Ajusta el color según sea necesario */
+}
+
+
+.container05 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0300630f;
+}
+
+.text05 {
+    width: 80%;
+    height: 200px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.text05 h1 {
+    font-size: 2em;
+    color: #0D326D; /* Ajusta el color según sea necesario */
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Centra el texto del título */
+}
+
+.text05 p {
+    margin: 20px 0;
+    color: #333;
+}
+
+.text05 button {
+    background-color: #007BFF; /* Ajusta el color según sea necesario */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block; /* Asegura que el botón esté centrado */
+}
+
+.text05 button:hover {
+    background-color: #0056b3; /* Ajusta el color según sea necesario */
+}
+
+.container-general-06{
+    padding: 20px 0 10px 0;
+}
+
+
+.container06 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto; /* Asegura que el contenedor esté centrado horizontalmente */
+}
+
+.image06 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image06 img {
+    border-radius: 50%;
+    width: 300px; /* Ajusta este valor según sea necesario */
+    height: auto;
+}
+
+.text06 {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.text06 h1 {
+    font-size: 2em;
+    color: #0D326D; /* Ajusta el color según sea necesario */
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Centra el texto del título */
+}
+
+.text06 p {
+    margin: 20px 0;
+    color: #333; /* Ajusta el color según sea necesario */
+}
+
+.text06 button {
+    background-color: #007BFF; /* Ajusta el color según sea necesario */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block; /* Asegura que el botón esté centrado */
+}
+
+.text06 button:hover {
+    background-color: #0056b3; /* Ajusta el color según sea necesario */
+}
+
+.image-nom {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-nom img {
+    width: 200px; /* Ajusta este valor según sea necesario */
+    height: auto;
+    padding: 50px 20px 40px 20px;
+}
+
+.image-background {
+    position: relative;
+    width: 100%; 
+    height: 400px;
+    overflow: hidden; 
+    background: url('../Images/Etica-proyecto/E_P.webp') no-repeat center center; 
+    background-size: cover; 
+    background-attachment: fixed; 
+}
+
+.image-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none; 
+    z-index: 1;
+}
+
+.text01 img {
+    display: none;
+}
+
+/* Estilos generales para teléfonos móviles (hasta 767px) */
+
+@media (max-width: 767px) {
+    .container01 {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .text01 {
+        max-width: 90%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .text01 h1 {
+        font-size: 2em;
+        color: #0c194b;
+        margin-bottom: 10px;
+    }
+
+    .text01 p {
+        font-size: 0.8em;
+        color: #333;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .text01 h2 {
+        display: none;
+    }
+    .text01 h4 {
+        display: none;
+    }
+    .image01 {
+        display: none;
+    }
+
+    .text01 img {
+        display: block;
+    }
+
+    .container02 {
+        flex-direction: column;
+        width: 90%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .image02 {
+        margin-bottom: 10px;
+    }
+
+    .image02 img {
+        border-radius: 50%;
+        width: 150px;
+        height: auto;
+    }
+
+    .text02 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .text02 h1 {
+        font-size: 1.5em;
+    }
+
+    .text02 p {
+        font-size: 0.8em;
+    }
+
+    .text02 button {
+        font-size: 0.9em;
+    }
+
+    .container03,
+    .container04,
+    .container05,
+    .container06 {
+        flex-direction: column;
+        width: 90%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .text03,
+    .text04,
+    .text05,
+    .text06 {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .text03 h1,
+    .text04 h1,
+    .text05 h1,
+    .text06 h1 {
+        font-size: 1.5em;
+    }
+
+    .text03 p,
+    .text04 p,
+    .text05 p,
+    .text06 p {
+        font-size: 0.8em;
+    }
+
+    .text03 b,
+    .text04 b,
+    .text05 b,
+    .text06 b {
+        font-size: 0.8em;
+    }
+
+    .text03 button,
+    .text04 button,
+    .text05 button,
+    .text06 button {
+        font-size: 0.9em;
+    }
+
+    .image04 img,
+    .image06 img,
+    .image-nom img {
+        width: 130px;
+        height: auto;
+    }
+
+    .image-background {
+        height: 200px;
+    }
+
+    .image-background::before {
+        height: 50px;
+    }
+}
+
+

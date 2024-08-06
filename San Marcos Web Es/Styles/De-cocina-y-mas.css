@@ -1,0 +1,343 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.bienvenida img {
+    width: 100%;
+    height: 380px;
+    border-bottom: 18px solid #FFFF00;
+}
+
+.contenido {
+    text-align: center;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.titulo {
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.descripcion {
+    font-size: 15px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    opacity: 0; 
+    transform: translateX(-100%); 
+    animation: slideIn 1s forwards;
+}
+
+.icon-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.icon-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.icon-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.icon-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.icon-item:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.icon-item:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.icon-item img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.icon-item img:hover {
+    animation: pulse 1s infinite;
+}
+
+.icon-item p {
+    font-size: 25px;
+    margin-top: 10px;
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.video-recipes {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.video-recipes::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background-color: #0A1F45;
+    z-index: -1;
+}
+
+.text-section {
+    flex: 1;
+    margin: -20px 30px 0 10px; 
+    text-align: center;
+    position: relative;
+}
+
+.text-section h1 {
+    color: #001f54;
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.text-section p {
+    color: #333333;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #ffd700;
+    color: #001f54;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1em;
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.button:hover {
+    background-color: #08476F; /* Color de fondo cuando se pasa el cursor */
+    color: #ffffff; /* Color del texto cuando se pasa el cursor */
+}
+
+.video-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.video-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.contenido2 {
+    text-align: center;
+    width: 98%; /* Cambiado de 60% a 98% */
+    margin: 120px auto 0;
+}
+
+.titulo2 {
+    margin: -100px auto 0;
+    text-align: center; /* Centra el contenido del contenedor */
+}
+
+.linea-amarilla {
+    width: 150px;
+    height: 15px;
+    background: linear-gradient(to right, #FFED02, #FED000);
+    margin: -20px auto 30px; /* Centra horizontalmente y ajusta el margen superior */
+}
+
+
+
+.container2 {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.container2 a{
+    text-decoration: none;
+}
+
+.promo2 {
+    flex: 1 1 calc(20% - 16px); 
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.promo2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: filter 0.3s ease;
+}
+
+.description2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 312;
+    font-style: normal;
+}
+
+.promo2:hover .description2 {
+    opacity: 1;
+}
+
+.promo2:hover img {
+    filter: brightness(50%);
+}
+
+.title2 {
+    margin-top: 30px; 
+    font-family: "Public Sans", sans-serif;
+    font-weight: 900;
+    font-size:35px;
+    color: #333; /* Color del título */
+}
+
+
+
+.fondo {
+    position: relative;
+    width: 100%; 
+    height: 450px; 
+}
+
+.fondo img {
+    position: relative;
+    z-index: 2; 
+    width: 100%; 
+    height: 100%; 
+    transform: rotate(180deg);
+}
+
+.background001 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/San Marcos Web Es/Images/De-cocina-y-mas/molletes.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+
+
+@media (max-width: 768px) {
+    .contenido, .contenido2 {
+        width: 100%;
+    }
+
+    .video-recipes, .video-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .icon-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container2{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .promo2 {
+        flex: 1 1 calc(33% - 20px);
+    }
+
+    .promo2 img {
+        width: 150px;
+        height: auto;
+    }
+    
+    .title2 {
+        font-size: 25px;
+    }
+}
+

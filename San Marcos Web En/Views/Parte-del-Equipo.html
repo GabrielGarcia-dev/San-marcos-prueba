@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Marcos - Parte del equipo</title>
+    <link rel="stylesheet" href="/San Marcos Web Es/Styles/Parte-del-Equipo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="stylesheet" href="./Header/header.css">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web En/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+<main>
+    <section class="hero">
+        <img src="/San Marcos Web En/Images/Parte-del-Equipo/fondo1.png" alt="Fondo" class="hero-image">
+        <img src="/San Marcos Web En/Images/Parte-del-Equipo/image.png" alt="" class="imagen001">
+        <p>Join our team and be part of our family! We value talent and passion, and offer a dynamic, collaborative, and ever-growing work environment. We are looking for people like you. We offer benefits and growth opportunities. Do not wait more! Contact us and discover the exciting opportunities that await you as part of our team..</p>
+    </section>
+    <section class="contact-form">
+        <form action="#" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="tel" name="phone" placeholder="Phone">
+            <textarea name="message" placeholder="Mesagge"></textarea>
+            <p class="cv-text">send your CV</p>
+            <input type="file" name="cv" accept=".pdf,.doc,.docx" placeholder="Adjuntar CV">
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="form-image">
+            <img src="/San Marcos Web Es/Images/Parte-del-Equipo/1.png" alt="San Marcos">
+        </div>
+    </section>
+</main>
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+</body>
+</html>

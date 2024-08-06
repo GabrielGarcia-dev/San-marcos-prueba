@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #0e2244;
+    color: white;
+    padding: 20px 0;
+    border-bottom: 4px solid #ffdd00;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.menu-icon {
+    position: relative;
+}
+
+.menu-bars {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: rgba(14, 34, 68, 0.9);
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ffdd00;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.menu-dropdown li {
+    position: relative;
+    border-bottom: 1px solid #ffdd00;
+    margin: 0;
+}
+
+.menu-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.menu-dropdown li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 8px; 
+}
+
+.menu-dropdown li a:hover {
+    background-color: #ffdd00;
+    color: #0e2244;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgba(14, 34, 68, 0.9); 
+    border: 1px solid #ffdd00;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    min-width: 200px; 
+}
+
+.submenu li {
+    border-bottom: 1px solid #ffdd00;
+    margin: 0;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    border-radius: 8px; 
+}
+
+.menu-dropdown li:hover .submenu {
+    display: block;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    max-height: 55px;
+}
+
+.search-lang {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 5px;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.languages img {
+    max-height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1150px;
+        }
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-input {
+            display: none;
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            right: calc(100% + 8px); /* Aparece a la izquierda del icono */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .search-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* Checkbox oculto para controlar el estado */
+        .search-container input[type="checkbox"] {
+            display: none;
+        }
+        /* Mostrar el campo de búsqueda cuando el checkbox está marcado */
+        .search-container input[type="checkbox"]:checked + .search-input {
+            display: block;
+        }
+        /* Mostrar el icono solo cuando el checkbox no está marcado */
+        .search-container input[type="checkbox"]:not(:checked) + .search-icon {
+            display: block;
+        }
+        /* Ocultar el icono cuando el checkbox está marcado */
+        .search-container input[type="checkbox"]:checked + .search-icon {
+            display: none;
+        }
+        /* Hacer que el campo de búsqueda se muestre sobre el icono */
+        .search-container input[type="checkbox"]:checked ~ .search-input {
+            display: block;
+        }
+
+
+
+        .results {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .results li {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .results li:hover {
+            background-color: #eee;
+        }
+
+
+
+        
+
+
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Fija el modal en la pantalla */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite el desplazamiento si el contenido es grande */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centra el modal vertical y horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo del modal */
+    position: relative;
+    border-radius: 30px;
+}
+
+/* Botón para cerrar el modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 100px;
+    }
+
+    .search input {
+        border-radius: 20px;
+        outline: none;
+        width: 45px;
+    }
+    .languages img {
+        max-height: 15px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 100px;
+    }
+
+    .search input {
+        border-radius: 20px;
+        outline: none;
+        width: 45px;
+    }
+    .languages img {
+        max-height: 15px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+}
+

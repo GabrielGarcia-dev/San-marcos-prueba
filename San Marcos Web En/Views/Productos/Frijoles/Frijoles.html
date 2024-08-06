@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product View</title>
+    <link rel="stylesheet" href="./Frijoles.css">
+    <link rel="stylesheet" href="/San Marcos Web En/Views/Header/header.css">
+    <link rel="stylesheet" href="/San Marcos Web En/Views/Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                });
+        });
+    </script>
+
+    <div class="product-container">
+        <div class="product-info">
+            <h2 id="product-category">Beans</h2>
+            <p id="product-description">Our delicious beans are an essential ingredient in our cuisine. Our beans are carefully selected and cooked to perfection, maintaining their soft texture and traditional flavor. At San Marcos, we offer a variety of options that allow you to create dishes full of flavor and nostalgia. Join us on this culinary journey and discover how our San Marcos beans can add that special touch to your tacos, enchiladas, soups, and more. Get ready to enjoy authentic Mexican tradition in every spoonful of our beans!</p>
+        </div>
+        <br>
+        <div class="product-details">
+            <div class="product-text">
+                <p id="product-weight">580g</p>
+                <h1 id="product-title">Refried Bay Beans</h1>
+                <p id="product-info">Our whole bay beans are of the highest quality and are carefully selected to bring them to your table.</p>
+                <a id="product-link" href="./Info-frijoles.html?product=chicharos">
+                    <button class="button01">
+                        <span>SEE MORE ></span>
+                    </button>
+                </a>
+            </div>
+            <div class="product-image">
+                <img id="product-image" src="./Image-frijoles/frijoles-refritos-bayos_V2.webp" alt="Bay Beans Refried">
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        <div class="button-container">
+            <div class="button" id="prev-button">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="button" id="next-button">
+                <i class="fas fa-chevron-right"></i> 
+            </div>
+        </div>
+
+        <br>
+        <br>
+    </div>
+    
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+    <script src="./Frijoles.js"></script>
+</body>
+</html>

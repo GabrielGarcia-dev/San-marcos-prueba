@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-res.css">
+    <link rel="stylesheet" href="../../../Views/Footer/footer.css">
+    <link rel="stylesheet" href="../../Header/header.css">
+    <title></title>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../../Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                });
+        });
+    </script>
+
+    <div class="container1">
+        <div class="titulo">Beef / Pork Recipes</div>
+        <p>At San Marcos, we are excited to present a variety of irresistible recipes that highlight 
+            the flavor and quality of our meats, using our San Marcos products. From spicy sauces to 
+            special marinades, our products enhance the flavors of the meat with a Mexican touch. Whether 
+            you prefer grilled, oven-roasted, or slow-cooked meats, at San Marcos we have everything you 
+            need to create flavorful and traditional dishes. Join us on this culinary journey and discover 
+            how our San Marcos products can elevate your meat recipes to new heights of flavor and delight. 
+            Get ready to enjoy an explosion of authentic flavors in every bite of meat!</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item" data-recipe="filete-puerco">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/Filete-de-puerco-con-glaseado-de-pina-al-chipotle.webp" alt="Centered image">
+                <div class="overlay">Pork Filet with Pineapple Chipotle Glaze</div>
+            </div>
+            <div class="name">Pork Filet with Pineapple Chipotle Glaze</div>
+        </div>
+        <div class="grid-item" data-recipe="chicharron-salsa">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/Chicharron-en-salsa-verde.webp" alt="Centered image">
+                <div class="overlay">Chicharrón in Green Salsa</div>
+            </div>
+            <div class="name">Chicharrón in Green Salsa</div>
+        </div>
+        <div class="grid-item" data-recipe="frittata-chicharron">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/Frittata-de-chicharron.webp" alt="Centered image">
+                <div class="overlay">Chicharrón Frittata</div>
+            </div>
+            <div class="name">Chicharrón Frittata</div>
+        </div>
+        <div class="grid-item" data-recipe="picadillo">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/Picadillo.webp" alt="Centered image">
+                <div class="overlay">Picadillo</div>
+            </div>
+            <div class="name">Picadillo</div>
+        </div>
+        <div class="grid-item" data-recipe="nachos-jalapeños">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/nachos-carne.webp" alt="Centered image">
+                <div class="overlay">Nachos with Meat and Jalapeño Slices</div>
+            </div>
+            <div class="name">Nachos with Meat and Jalapeño Slices</div>
+        </div>
+        <div class="grid-item" data-recipe="jalapeños-queso">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/chiles-tocino.webp" alt="Centered image">
+                <div class="overlay">Jalapeños Stuffed with Cheese and Bacon</div>
+            </div>
+            <div class="name">Jalapeños Stuffed with Cheese and Bacon</div>
+        </div>
+        <div class="grid-item" data-recipe="chorizo-papas">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/papas-chile.webp" alt="Centered image">
+                <div class="overlay">Chorizo with Potatoes and Jalapeño Strips</div>
+            </div>
+            <div class="name">Chorizo with Potatoes and Jalapeño Strips</div>
+        </div>
+        <div class="grid-item" data-recipe="hot-dog">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/hot-dog.webp" alt="Centered image">
+                <div class="overlay">Hot Dog with Chopped Jalapeños</div>
+            </div>
+            <div class="name">Hot Dog with Chopped Jalapeños</div>
+        </div>
+        <div class="grid-item" data-recipe="tostadas-jalapeño">
+            <div class="image-container">
+                <img src="/San Marcos Web En/Views/Recetas/Recetas-Res/Recetas-Res/tostada-salpicon.webp" alt="Centered image">
+                <div class="overlay">Salpicón Tostadas with Jalapeño Strips</div>
+            </div>
+            <div class="name">Salpicón Tostadas with Jalapeño Strips</div>
+        </div>
+    </div>
+    <div class="image-background">
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const recipe = this.getAttribute('data-recipe');
+                window.location.href = `/San Marcos Web En/Views/Recetas/Recetas-Res/receta.html?recipe=${recipe}`;
+            });
+        });
+    </script>
+</body>
+</html>

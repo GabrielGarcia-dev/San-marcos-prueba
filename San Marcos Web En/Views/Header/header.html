@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../Header/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Header Example</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-icon" id="menuIcon">
+                <span class="menu-bars">&#9776;</span>
+                <ul class="menu-dropdown" id="menuDropdown">
+                    <li><a href="/San Marcos Web En/Index.html">Home</a></li>
+                    <li><a href="/San Marcos Web En/Views/Nuestros-productos.html">Products</a></li>
+                    <li><a href="/San Marcos Web En/Views/De-cocina-y-mas.html">From the Kitchen & More</a></li>
+                    <li><a href="/San Marcos Web En/Views/De-mexico-para-el-mundo.html">About Us</a></li>
+                    <li><a href="/San Marcos Web En/Views/Etica-proyecto.html">Ethics</a></li>
+                    <li><a href="/San Marcos Web En/Views/Reporte-Sostenibilidad.html">Sustainability</a></li>
+                    <li><a href="/San Marcos Web En/Views/Atencion-clientes.html">Contact</a>
+                        <ul class="submenu">
+                            <li><a href="/San Marcos Web En/Views/Atencion-clientes.html">Customer Service</a></li>
+                            <li><a href="/San Marcos Web En/Views/Parte-del-Equipo.html">Join Our Team</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="/San Marcos Web En/Index.html"><img src="/San Marcos Web En/Views/Header/Images/logo_sanmarcos.svg" alt="San Marcos"></a>
+            </div>
+
+
+            <div class="center-container">
+                <div class="search-container">
+                    <input type="checkbox" id="search-toggle">
+                    <label for="search-toggle">
+                        <i class="fas fa-search search-icon"></i>
+                    </label>
+                    <input type="text" class="search-input" placeholder="Buscar..." id="buscar">
+                </div>
+            </div>
+
+
+
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <ul id="results"></ul>
+                </div>
+            </div>
+
+
+
+            <div class="search-lang">
+                <div class="languages">
+                    <a href="/San Marcos Web Es/Index.html">
+                        <img src="/San Marcos Web En/Views/Header/Images/bandera.png" alt="Spanish">
+                    </a>
+                    <a href="/San Marcos Web En/Index.html">
+                        <img src="/San Marcos Web En/Views/Header/Images/australia.png" alt="English">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // Datos de ejemplo
+        let data = [
+    { name: "Chili Products", image: "/San Marcos Web En/Images/Home/chilli_name.webp", link: "/San Marcos Web En/Views/Productos/Chiles/Chiles.html" },
+    { name: "Bean Products", image: "/San Marcos Web En/Images/Home/bean_nameV2.webp", link: "/San Marcos Web En/Views/Productos/Frijoles/Frijoles.html" },
+    { name: "Fruit Products", image: "/San Marcos Web En/Images/Home/fruit_name.webp", link: "/San Marcos Web En/Views/Productos/Frutas/Frutas.html" },
+    { name: "Salsa Products", image: "/San Marcos Web En/Images/Home//sauc_name.webp", link: "/San Marcos Web En/Views/Productos/Salsas/Salsas.html" },
+    { name: "Vegetable Products", image: "/San Marcos Web En/Images/Home//vege_name.webp", link: "/San Marcos Web En/Views/Productos/Verduras/Verduras.html" },
+    { name: "Vinegar Products", image: "/San Marcos Web En/Images/Home//vineg_name.webp", link: "/San Marcos Web En/Views/Productos/Vinagre/Vinagre.html" },
+
+    { name: 'Products', image: '/San Marcos Web En/Images/Nuestros-productos/Background01.jpg', link: '/San Marcos Web En/Views/Nuestros-productos.html' },
+    { name: 'Recipes', image: '/San Marcos Web En/Images/De-cocina-y-mas/Background01.webp', link: '/San Marcos Web En/Views/De-cocina-y-mas.html' },
+
+    { name: 'Chicken Recipes', image: '/San Marcos Web En/Images/De-cocina-y-mas/pollo.webp', link:'./Views/Recetas/Recetas-Pollo/Recetas-pollo.html'},
+    { name: 'Beef / Pork Recipes', image: '/San Marcos Web En/Images/De-cocina-y-mas/Res.webp', link: './Views/Recetas/Recetas-Res/Recetas-res.html'},
+    { name: 'Fish Recipes', image: '/San Marcos Web En/Images/De-cocina-y-mas/Pescado.webp', link:'./Views/Recetas/Recetas-Pescado/Recetas-pescado.html'},
+    { name: 'Pasta Recipes', image: '/San Marcos Web En/Images/De-cocina-y-mas/Paste.webp', link:'./Views/Recetas/Recetas-Pasta/Recetas-pasta.html'},
+    { name: 'Chile Recipes', image: '/San Marcos Web En/Images/De-cocina-y-mas/Chile.webp', link: './Views/Recetas/Recetas Chile/Recetas-chiles.html'},
+    { name: 'Vegetable Recipes', image:'/San Marcos Web En/Images/De-cocina-y-mas/Verdura.webp', link: './Views/Recetas/Recetas -Verduras/Recetas-verdura.html'}
+];
+
+
+    
+        function buscar() {
+            let query = document.getElementById("buscar").value;
+    
+            console.log(query);
+    
+            if (query.trim() === "") {
+                return;
+            }
+    
+            let results = [];
+    
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].name.toLowerCase().includes(query.toLowerCase())) {
+                    results.push(data[i]);
+                }
+            }
+    
+            let resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = "";
+    
+            if (results.length > 0) {
+                for (let i = 0; i < results.length; i++) {
+                    let li = document.createElement('li');
+    
+                    let img = document.createElement('img');
+                    img.src = results[i].image;
+                    img.alt = results[i].name;
+                    img.style.width = '100px'; // Ajusta el tamaño según sea necesario
+                    img.style.height = '100px'; // Ajusta el tamaño según sea necesario
+    
+                    let a = document.createElement('a');
+                    a.href = results[i].link;
+                    a.textContent = results[i].name;
+                    a.style.marginLeft = '40px'; // Espacio entre la imagen y el texto
+    
+                    li.appendChild(img);
+                    li.appendChild(a);
+                    resultsContainer.appendChild(li);
+                }
+            } else {
+                let li = document.createElement('li');
+                li.textContent = "No hay resultados";
+                resultsContainer.appendChild(li);
+            }
+    
+            document.getElementById("modal").style.display = "block"; // Muestra el modal
+        }
+    
+        function closeModal() {
+            document.getElementById("modal").style.display = "none"; // Oculta el modal
+        }
+    
+        document.getElementById("buscar").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Evita el comportamiento por defecto del Enter
+                buscar();
+            }
+        });
+    </script>
+    
+</body>
+</html>

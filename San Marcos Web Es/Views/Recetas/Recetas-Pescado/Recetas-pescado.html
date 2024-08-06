@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Recetas-pescado.css">
+    <link rel="stylesheet" href="../../../Views/Footer/footer.css">
+    <link rel="stylesheet" href="../../Header/header.css">
+    <title></title>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    fetch('../../../Views/Header/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            const menuIcon = document.getElementById('menuIcon');
+            const menuDropdown = document.getElementById('menuDropdown');
+
+            menuIcon.addEventListener('click', function() {
+                if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                    menuDropdown.style.display = "block";
+                } else {
+                    menuDropdown.style.display = "none";
+                }
+            });
+        });
+});
+    </script>
+
+
+    <div class="container1">
+        <div class="titulo">Recetas con Pescado</div>
+        <p>En San Marcos, nos complace presentarles una variedad de recetas deliciosas que combinan el fresco sabor del pescado con nuestros productos San Marcos. Nuestros productos realzan los sabores auténticos de la cocina de mar con un toque mexicano. Ya sea que prefieras pescado a la parrilla, al horno o en ceviche, en San Marcos tenemos todo lo que necesitas para crear platos llenos de sabor y tradición. Únete a nosotros en este viaje culinario y descubre cómo nuestros productos San Marcos pueden elevar tus recetas de pescado a nuevas alturas de sabor y deleite. ¡Prepárate para disfrutar de una explosión de sabores marinos auténticos en cada bocado de pescado!</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item"  data-recipe="ensalda-atun">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/ensalda_atun.webp" alt="Imagen centrada">
+                    <div class="overlay">Ensalda de atún</div>
+                </div>
+            <div class="name">Ensalda de atún</div>
+        </div>
+        <div class="grid-item" data-recipe="ensalda-surimi">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/ensalda_surimi.webp" alt="Imagen centrada">
+                    <div class="overlay">Ensalada de surimi</div>
+                </div>
+            <div class="name">Ensalada de surimi</div>
+        </div>
+        <div class="grid-item" data-recipe="tostada-mariscos">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/tostada_marisco.webp" alt="Imagen centrada">
+                    <div class="overlay">Tostada de mariscos</div>
+                </div>
+            <div class="name">Tostada de mariscos</div>
+        </div>
+        <div class="grid-item" data-recipe="pescado-jocoque">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/filete_pes_chipotle.webp" alt="Imagen centrada">
+                    <div class="overlay">Pescado en Jocoque / Crema de Chipotle</div>
+                </div>
+            <div class="name">Pescado en Jocoque / Crema de Chipotle</div>
+        </div>
+        <div class="grid-item" data-recipe="coditos-atun">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/coditos_atun.webp" alt="Imagen centrada">
+                    <div class="overlay">Coditos con Atún y Chipotle</div>
+                </div>
+            <div class="name">Coditos con Atún y Chipotle</div>
+        </div>
+        <div class="grid-item" data-recipe="tacos-camarones">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/tacos_camaron.webp" alt="Imagen centrada">
+                    <div class="overlay">Tacos de Camarones con Rajas de Jalapeños</div>
+                </div>
+            <div class="name">Tacos de Camarones con Rajas de Jalapeños</div>
+        </div>
+        <div class="grid-item" data-recipe="tazon-pulpo">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/Tazon-de-arroz-con-verduras-y-pulpo-al-chipotle.webp" alt="Imagen centrada">
+                    <div class="overlay">Tazón de arroz  con verduras y pulpo al chipotle</div>
+                </div>
+            <div class="name">Tazón de arroz  con verduras y pulpo al chipotle</div>
+        </div>
+        <div class="grid-item" data-recipe="pescado-empapelado">
+                <div class="image-container">
+                    <img src="./Recetas-Pescado/Pescado-empapelado.webp" alt="Imagen centrada">
+                    <div class="overlay">Pescado empapelado</div>
+                </div>
+            <div class="name">Pescado empapelado</div>
+        </div>
+    </div>
+    <div class="image-background">
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const recipe = this.getAttribute('data-recipe');
+                window.location.href = `./receta.html?recipe=${recipe}`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-icons {
+    position: absolute;
+    right: 20px; 
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons img {
+    height: 25px;
+    margin-left: 15px;
+}
+
+.hero {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0px 0px;
+ /* Agregado para que la imagen se ajuste dentro del contenedor */
+}
+
+.hero h1 {
+    margin-top: 0;
+}
+
+.hero p {
+    margin-top: 30px; /* Ajusta el margen superior para alejar el texto de la imagen */
+    padding: 0px 90px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Opcional, puedes ajustar según necesites */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    padding: 50px;
+    align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.contact-form form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0; /* Elimina el margen derecho del formulario */
+    margin-left: 20px; /* Ajusta el margen izquierdo del formulario */
+    padding-right: 10px; /* Ajusta el espacio dentro del formulario */
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    margin-bottom: 15px; /* Aumenta el espacio entre los campos */
+    padding: 10px; /* Aumenta el padding para hacer los campos más gruesos */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px; /* Aumenta el tamaño del texto */
+    line-height: 1.5; /* Aumenta el interlineado */
+}
+
+.contact-form form button {
+    padding: 15px; /* Aumenta el padding del botón */
+    font-size: 16px; /* Aumenta el tamaño del texto en el botón */
+    background-color: #002F87; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de mano al pasar por encima */
+}
+
+
+.contact-form .form-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    margin-left: 0; /* Elimina el margen izquierdo de la imagen */
+}
+
+.contact-form .form-image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
+    max-width: 500px; /* Ajusta según sea necesario */
+    margin-left: 0; /* Elimina el margen izquierdo de la imagen */
+}
+
+.imagen011 {
+    display: none;
+}
+
+@media (max-width: 767px) {
+  
+    .hero {
+     /* Añade padding para que el contenido no quede pegado a los bordes */
+    }
+
+    .hero p {
+        padding: 0 10px; /* Ajusta el padding para que el texto no quede tan cerca del borde */
+        margin-top: 20px; /* Reduce el margen superior */
+    }
+
+    .hero-image {
+        display: none;
+    }
+    
+    .imagen011{
+        display: block;
+    }
+
+    /* Ajustes para el formulario de contacto */
+    .contact-form {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+        padding: 20px; /* Reduce el padding */
+        align-items: stretch; /* Estira el formulario para que ocupe todo el ancho disponible */
+    }
+
+    .contact-form form {
+        margin: 0; /* Elimina el margen */
+        padding: 10px; /* Reduce el padding del formulario */
+    }
+
+    .contact-form form input,
+    .contact-form form textarea {
+        margin-bottom: 10px; /* Reduce el espacio entre los campos */
+        padding: 8px; /* Reduce el padding */
+    }
+
+    .contact-form form button {
+        padding: 10px; /* Reduce el padding del botón */
+        font-size: 14px; /* Reduce el tamaño del texto en el botón */
+    }
+
+    /* Ajustes para la imagen del formulario */
+    .contact-form .form-image {
+        margin: 0; /* Elimina el margen */
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    }
+
+    .contact-form .form-image img {
+        max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+        max-height: 200px; /* Ajusta la altura máxima */
+    }
+}
+

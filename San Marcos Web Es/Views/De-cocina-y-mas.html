@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/San Marcos Web Es/Styles/De-cocina-y-mas.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,847;1,847&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./Header/header.css">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,312;1,312&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web Es/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+
+
+    <div class="container">
+        
+        <div class="bienvenida">
+            <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Background01.webp" alt="">
+        </div>
+
+        <div class="contenido">
+            <div class="titulo">
+                <h1>Cocina con San Marcos</h1>
+            </div>
+            <div class="descripcion">
+                <p>Descubre las diversas categorías para darle un toque único a tu cocina. 
+                    Valoramos el amor por la cocina y ofrecemos productos de alta calidad 
+                    para madres que disfrutan cocinar. Desde salsas picantes hasta chiles 
+                    enlatados, San Marcos te ayuda a crear sabores auténticos y deliciosos. 
+                    Elige entre nuestras opciones y transforma tus comidas en experiencias llenas de sabor.</p>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <div class="icon-item">
+                <a href="/San Marcos Web Es/Views/Recetas/Recetas-Pollo/Recetas-pollo.html">
+                    <img src="/San Marcos Web Es/Images/De-cocina-y-mas/pollo.webp" alt="Pollo">
+                </a>
+                <p>Pollo</p>
+            </div>
+            <div class="icon-item">
+                <a href="/San Marcos Web Es/Views/Recetas/Recetas-Res/Recetas-res.html">
+                    <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Res.webp" alt="Res / Cerdo">
+                </a>            
+                <p>Res / Cerdo</p>
+            </div>
+            <div class="icon-item">
+                <a href="/San Marcos Web Es/Views/Recetas/Recetas-Pescado/Recetas-pescado.html">
+                    <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Pescado.webp" alt="Pescado">
+                </a>
+                <p>Pescado</p>
+            </div>
+            <div class="icon-item">
+                <a href="/San Marcos Web Es/Views/Recetas/Recetas-Pasta/Recetas-pasta.html">
+                    <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Paste.webp" alt="Pasta">
+                </a>
+                <p>Pasta</p>
+            </div>
+            <div class="icon-item">
+                <a href="/San Marcos Web Es/Views/Recetas/Recetas Chile/Recetas-chiles.html">
+                    <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Chile.webp" alt="Chile">
+                </a>
+                    <p>Chile</p>
+            </div>
+            <div class="icon-item">
+                <a href="/San Marcos Web Es/Views/Recetas/Recetas -Verduras/Recetas-verdura.html">
+                    <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Verdura.webp" alt="Verdura">
+                </a>
+                <p>Verdura</p>
+            </div>
+        </div>
+
+        <section class="video-recipes">
+            <div class="text-section">
+                <h1>Video recetas San Marcos</h1>
+                <p>
+                    Descubre las diversas categorías para darle un toque único a tu cocina. Valoramos el amor por la cocina y ofrecemos productos de alta calidad para madres que disfrutan cocinar. Desde salsas picantes hasta chiles enlatados, San Marcos te ayuda a crear sabores auténticos y deliciosos. Elige entre nuestras opciones y transforma tus comidas en experiencias llenas de sabor.
+                </p>
+                <a href="https://www.youtube.com/@alimentossanmarcos9655" class="button"> ▶ Ver más</a>
+            </div>
+            <div class="video-section">
+                <div class="video-main">
+                    <iframe width="664" height="374" src="https://www.youtube.com/embed/XhYqPFY94uc" title="Pasta cremosa con Chipotles Adobados San Marcos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-side">
+                    <iframe width="310" height="174" src="https://www.youtube.com/embed/mP72bgNuPkY" title="Torta de milanesa con Chipotles San Marcos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="310" height="174" src="https://www.youtube.com/embed/h2C1NpF4Tfo" title="Tostada de picadillo con Salsa Chipotle San Marcos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+        </section>
+
+        <div class="contenido2">
+            <div class="titulo2">
+                <h1>Recetarios</h1>
+                <div class="linea-amarilla"></div>
+            </div>            
+            
+            <div class="container2">
+                <div class="promo2">
+                    <a href="https://alimentossanmarcos.com.mx/wp-content/uploads/2023/01/Receta_Cuaresma.pdf" target="_blank">
+                        <img src="/San Marcos Web Es/Images/De-cocina-y-mas/receta_cuars.webp" alt="Cuaresma 2023">
+                        <div class="description2">
+                            <p>
+                                Descubre nuestras deliciosas recetas de cuaresma, déjate llevar por los sabores 
+                                tradicionales y la magia de nuestras recetas de San Marcos. ¡Explora, prueba y
+                                disfruta cada bocado en esta temporada tan especial!<br><br><br>Ver Recetario
+                            </p>
+                        </div>
+                        <div class="title2">Cuaresma 2023</div>
+                    </a>
+                </div>
+                <div class="promo2">
+                    <a href="https://alimentossanmarcos.com.mx/wp-content/uploads/2023/08/Landing-Completo-FiestasPatrias_compressed.pdf" target="_blank">
+                        <img src="/San Marcos Web Es/Images/De-cocina-y-mas/recetadas-fiestaspatrias-portada.webp" alt="Fiestas Patrias">
+                        <div class="description2">
+                            <p>
+                            Celebra con el sabor auténtico de México. Nuestras recetas con chipotle te llevarán 
+                            en un viaje culinario que honra nuestras tradiciones y el espíritu de nuestra patria.
+                            ¡Vive la pasión de las Fiestas Patrias con cada bocado!<br><br><br>Ver Recetario
+                            </p>
+                        </div>
+                        <div class="title2">Fiestas Patrias</div>
+                    </a>
+                </div>
+                <div class="promo2">
+                    <a href="https://alimentossanmarcos.com.mx/wp-content/uploads/2023/08/recetas-la-magia-de-xico.pdf" target="_blank">
+                        <img src="/San Marcos Web Es/Images/De-cocina-y-mas/AnyConv.com__recetadas-lamagia-de-xico-portada.webp" alt="La magia de Xico">
+                        <div class="description2">
+                            <p>
+                            México es un país que enamora a cualquiera por la sensación que 
+                            nos provoca experimentar los colores, olores<br><br><br>Ver Recetario
+                            </p>
+                        </div>
+                        <div class="title2">La magia de Xico</div>
+                    </a>
+                </div>
+                <div class="promo2">
+                    <a href="https://alimentossanmarcos.com.mx/wp-content/uploads/2023/09/Recetario-Chiles-Largos.pdf" target="_blank">
+                        <img src="/San Marcos Web Es/Images/De-cocina-y-mas/AnyConv.com__recetadas-chilesgueros-portada.webp" alt="Chiles largos">
+                        <div class="description2">
+                            <p>
+                            Experimenta la intensidad y el sabor único de los chiles largos en cada bocado.
+                            Descubre cómo nuestros chiles largos de San Marcos pueden elevar tus platillos 
+                            a nuevos niveles de delicia y picante. ¡Atrévete a explorar el mundo de los chiles 
+                            largos y añade un toque de autenticidad a tus recetas!<br><br><br>Ver Recetario
+                            </p>
+                        </div>
+                        <div class="title2">Chiles largos</div>
+                    </a>
+                </div>
+                <div class="promo2">
+                    <a href="https://alimentossanmarcos.com.mx/wp-content/uploads/2024/04/Con-sabor-a-mar_recetario-cuaresma-San-Marcos-1.pdf" target="_blank">
+                        <img src="/San Marcos Web Es/Images/De-cocina-y-mas/recetadas-cuaresma2024-portada.webp" alt="Cuaresma 2024">
+                        <div class="description2">
+                            <p>Sumérgete en nuestras exquisitas recetas para la Cuaresma y 
+                            disfruta de los sabores tradicionales junto a la magia de San Marcos. ¡Explora, 
+                            prueba y disfruta de cada bocado en esta temporada tan especial!<br><br><br>Ver Recetario
+                            </p>
+                        </div>
+                        <div class="title2">Cuaresma 2024</div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="fondo">
+            <img src="/San Marcos Web Es/Images/De-cocina-y-mas/Desvanecido.png" alt="">
+            <div class="background001"></div>
+        </div>        
+        
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+</body>
+</html>

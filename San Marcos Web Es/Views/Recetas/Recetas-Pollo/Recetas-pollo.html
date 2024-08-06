@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Recetas-pollo.css">
+    <link rel="stylesheet" href="../../../Views/Footer/footer.css">
+    <link rel="stylesheet" href="../../Header/header.css">
+    <title></title>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    fetch('../../../Views/Header/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            const menuIcon = document.getElementById('menuIcon');
+            const menuDropdown = document.getElementById('menuDropdown');
+
+            menuIcon.addEventListener('click', function() {
+                if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                    menuDropdown.style.display = "block";
+                } else {
+                    menuDropdown.style.display = "none";
+                }
+            });
+        });
+});
+    </script>
+    <div class="container1">
+        <div class="titulo">Recetas con Pollo</div>
+        <p>En San Marcos sabemos lo importante que es para ustedes disfrutar de momentos especiales en la cocina. 
+            Es por eso que hemos creado una variedad de recetas con pollo, utilizando nuestros productos San Marcos,
+             para ayudarles a deleitar a sus seres queridos con platillos deliciosos y llenos de sabor.
+              Acompáñennos en este viaje culinario y descubran cómo nuestros productos pueden darle
+               un toque único a sus creaciones. ¡Prepárense para sorprender a sus familias con recetas 
+               irresistibles que solo San Marcos puede ofrecer!</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item"  data-recipe="pechugas-rellenas ">
+                <div class="image-container">
+                    <img src="./Recetas-pollo/Pechugas-rellenas-con-duraznos-San-Marcos.webp" alt="Imagen centrada">
+                    <div class="overlay">pechugas rellenas con duraznos san Marcos</div>
+                </div>
+            <div class="name">pechugas rellenas con duraznos san Marcos</div>
+        </div>
+        <div class="grid-item" data-recipe="taquitos-lechuga">
+                <div class="image-container">
+                    <img src="./Recetas-pollo/Taquitos-de-lechuga-con-pollo-agripicante.webp" alt="Imagen centrada">
+                    <div class="overlay">Taquitos de lechuga con pollo agripicante</div>
+                </div>
+            <div class="name">Taquitos de lechuga con pollo agripicante</div>
+        </div>
+        <div class="grid-item" data-recipe="ensalada-pollo">
+                <div class="image-container">
+                    <img src="./Recetas-pollo/Ensalada-de-pollo-con-vinagreta-y-rajas.webp" alt="Imagen centrada">
+                    <div class="overlay">Ensalada de pollo con vinagreta y rajas
+                    </div>
+                </div>
+            <div class="name">Ensalada de pollo con vinagreta y rajas
+            </div>
+        </div>
+        <div class="grid-item" data-recipe="fajita-pollo">
+                <div class="image-container">
+                    <img src="./Recetas-pollo/Fajitas-de-pollo-al-chipotle.webp" alt="Imagen centrada">
+                    <div class="overlay">Fajitas de pollo al chipotle
+                    </div>
+                </div>
+            <div class="name">Fajitas de pollo al chipotle</div>
+        </div>
+        <div class="grid-item" data-recipe="wrap-pollo">
+                <div class="image-container">
+                    <img src="./Recetas-pollo/wrap-pollo.webp" alt="Imagen centrada">
+                    <div class="overlay">Wrap de pollo</div>
+                </div>
+            <div class="name">Wrap de pollo</div>
+        </div>
+        </div>
+    </div>
+    <div class="image-background">
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const recipe = this.getAttribute('data-recipe');
+                window.location.href = `receta.html?recipe=${recipe}`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.product-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 80px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-info h2 {
+  color: #081E40;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.product-info h2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: -10px;
+  left: 0;
+  background-color: #FFD700;
+  z-index: -1;
+}
+
+.product-info p {
+  color: #666;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.product-text {
+  max-width: 50%;
+  font-size: 1.1em;
+  transition: transform 0.5s ease;
+}
+
+.product-text p {
+  color: #666;
+}
+
+.product-text h1 {
+  color: #081E40;
+  font-size: 3em;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.product-text h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFD700;
+  z-index: -1;
+  transform: scaleY(0.4);
+  animation: fadeInLeft 0.5s forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+#product-weight {
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+
+.button01 {
+  background-color: #ffffff; /* Color de fondo inicial (blanco) */
+  border: 2px solid #081F40; /* Color de borde inicial */
+  color: #081F40; /* Color de texto inicial */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  font-size: 16px; /* Tamaño del texto */
+  font-weight: bold; /* Peso del texto */
+  text-transform: uppercase; /* Transformar texto a mayúsculas */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor a mano al pasar sobre el botón */
+  position: relative; /* Necesario para el efecto de pseudo-elemento */
+  overflow: hidden; /* Ocultar el pseudo-elemento que se desborda */
+  transition: color 0.3s, border-color 0.3s; /* Transición para el color y borde */
+}
+
+.button01::before {
+  content: ""; /* No tiene contenido */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 0; /* Inicia desde la parte superior */
+  left: -100%; /* Comienza fuera del botón a la izquierda */
+  width: 100%; /* Ancho del botón */
+  height: 100%; /* Altura del botón */
+  background-color: #081F40; /* Color de fondo cuando se pasa el ratón */
+  z-index: 0; /* Coloca el pseudo-elemento detrás del texto */
+  transition: left 0.3s; /* Transición para el movimiento del pseudo-elemento */
+}
+
+.button01:hover::before {
+  left: 0; /* Mueve el pseudo-elemento hacia el interior del botón */
+}
+
+.button01:hover {
+  color: #ffffff; /* Color del texto cuando se pasa el ratón */
+  border-color: #081F40; /* Mantener el color del borde al pasar el ratón */
+}
+
+.button01 span {
+  position: relative; /* Necesario para colocar el texto sobre el pseudo-elemento */
+  z-index: 1; /* Coloca el texto por encima del pseudo-elemento */
+}
+
+.product-image {
+  width: 300px; 
+  height: 300px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+  border-radius: 8px;
+}
+
+.product-image img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+.product-text,
+.product-image {
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.product-text.hidden,
+.product-image.hidden {
+  opacity: 0;
+}
+
+.product-text.visible,
+.product-image.visible {
+  opacity: 1;
+}
+
+.fade-out {
+  animation: fadeOut 0.7s forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.7s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 36px; 
+}
+.button:hover {
+  background-color: #081E40;
+  color: white;
+}
+
+
+
+@media (max-width: 768px) {
+  .product-container {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .product-info h2 {
+      font-size: 2em;
+  }
+
+  .product-info p {
+      font-size: 1em;
+      max-width: 100%;
+  }
+
+  .product-details {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+  }
+
+  .product-text {
+      max-width: 100%;
+      font-size: 1em;
+      margin-bottom: 20px;
+  }
+
+  .product-text h1 {
+      font-size: 2em;
+  }
+
+  #product-weight {
+      font-size: 0.9em;
+  }
+
+  .button01 {
+      padding: 0.8em 1.5em;
+      font-size: 1em;
+  }
+
+  .product-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+}
+
+
+@media (max-width: 480px) {
+  .product-container {
+      width: 95%;
+      padding: 10px;
+  }
+
+  .product-info h2 {
+      font-size: 1.5em;
+  }
+
+  .product-info p {
+      font-size: 0.9em;
+  }
+
+  .product-details {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+  }
+
+  .product-text {
+      max-width: 100%;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+  }
+
+  .product-text h1 {
+      font-size: 1.5em;
+  }
+
+  #product-weight {
+      font-size: 0.8em;
+  }
+
+  .button01 {
+      padding: 0.6em 1.2em;
+      font-size: 0.9em;
+  }
+
+  .product-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Marcos</title>
+    <link rel="stylesheet" href="../Styles/Etica-proyecto.css">
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="stylesheet" href="./Header/header.css">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web En/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+
+    <div class="container01">
+        <div class="text01">
+            <h1>Message from our CEO</h1>
+            <p>We are a company that brings the heritage of the flavor of Mexico to the World. We are proud of our collaborators and the positive impact that the company has generated in the country for more than fifty years. We know that the world faces great challenges and we have the vision of being part of the solutions through the integration of the environmental, social and governance dimensions in our strategy.</p>
+            <p>We are a company that has people at the heart of its management and a strong culture based on our values, meritocracy and professional and personal development and this has allowed us to strengthen organizational resilience and face the global and local challenges of the years. recent. We have a great commitment to move forward, strengthening our value chain with a focus on our collaborators, clients, suppliers and communities in which we operate with concrete strategies and actions that allow us to grow as a company and as a society.</p>
+            <h2>Antonio Travieso</h3>
+            <h4>CEO of San Marcos</h5>
+        </div>
+        <div class="image01">
+            <img src="../Images/Etica-proyecto/CEOsm-679x1024.webp" alt="">
+        </div>
+    </div>
+
+    <div class="container02">
+        <div class="image02">
+            <img src="../Images/Etica-proyecto/etic_cent_prod-q6pjiyvwqejo9nw0wxrbopvve6g9y5nytbu97wlj40.webp" alt="">
+        </div>
+        <div class="text02">
+            <h1>Code of Éthics</h1>
+            <p>In San Marcos we have characterized ourselves as a leading company in the production and distribution of food and this makes us feel proud of the achievements we have achieved. We base our performance on corporate values: I am an owner, I dream big, I am passionate about what I do, I have integrity, I am excellent, I have sustainable management.</p>
+            <a href="">
+                <button>Download</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="container03">
+        <div class="text03">
+            <h1>Anti-Corruption Policy</h1>
+            <p>Bia’s Anti-Fraud and Anti-Corruption Policy applies to the Board of Directors, senior management and each of the collaborators of all subsidiaries and companies related to Bia. We also extend it to our value chain, especially suppliers of goods and services… <b> learn more</b></p>
+        </div>
+    </div>
+
+    <div class="container04">
+        <div class="text04">
+            <h1>Human Rights Policy</h1>
+            <p>At San Marcos we respect and promote gender equality, combating discrimination, ensuring equal access to opportunities and equity for the men and women who are part of the company.</p>
+            <button>Download</button>
+        </div>
+        <div class="image04">
+            <img src="../Images/Etica-proyecto/der_human-qqj2opfajusm0uqc0wu8rdea47um9sdr46513uqjnk.png" alt="imagen">
+        </div>
+    </div>
+
+    <div class="container05">
+        <div class="text05">
+            <h1>Ethics Line</h1>
+            <p>Report any incident that is of concern to you and that you believe may go against the organization’s values and policies.</p>
+            <button>Go to site</button>
+        </div>
+    </div>
+
+    <div class="container-general-06">
+        <div class="container06">
+            <div class="image06">
+                <img src="../Images/Etica-proyecto/pol_cal_in-qrmzfighshf16igw5voc0svhp2py9rc6oakp1utedc.webp" alt="">
+            </div>
+            <div class="text06">
+                <h1>Quality and safety policy</h1>
+                <p>As a corporate group dedicated directly or indirectly to the manufacturing of food and beverages, we commit to ensuring the quality and safety of our products through competent personnel, continuous improvement of our safety management system, compliance with legal, customer, and other applicable requirements, and effective communication with all interested parties to achieve our objectives.</p>
+                <button>Download</button>
+            </div>
+        </div>
+        
+        <div class="container07">
+            <div class="image-nom">
+                <img src="../Images/Etica-proyecto/certific_03.webp" alt="">
+                <img src="../Images/Etica-proyecto/certific_01.webp" alt="">
+                <img src="../Images/Etica-proyecto/certific_02.webp" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <div class="image-background">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el footer:', error));
+        });
+    </script>
+
+</body>
+</html>

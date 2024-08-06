@@ -1,0 +1,153 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #081F40;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.seccion-footer {
+    flex: 1;
+    padding: 10px;
+}
+
+.seccion-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.seccion-logo img.logotipo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.seccion-logo .desde {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.seccion-enlaces ul, .seccion-contacto ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.seccion-enlaces ul li, .seccion-contacto ul li {
+    margin-bottom: 10px;
+}
+
+.seccion-enlaces ul li a, .seccion-contacto ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.seccion-enlaces ul li a:hover, .seccion-contacto ul li a:hover {
+    color: #f0b429;
+}
+
+.seccion-social {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.seccion-social p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.seccion-social .iconos-redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.seccion-social .iconos-redes-sociales img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.seccion-social .iconos-redes-sociales img:hover {
+    transform: scale(1.1);
+}
+
+.seccion-social .numero-telefono {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .seccion-footer {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .seccion-logo img.logotipo {
+        max-width: 120px;
+    }
+
+    .seccion-social .iconos-redes-sociales {
+        gap: 8px;
+    }
+
+    .seccion-social .iconos-redes-sociales img {
+        width: 20px;
+        height: 20px;
+    }
+
+    footer {
+        padding: 25px 0;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 20px 0;
+        font-size: 11px;
+    }
+
+    .contenedor {
+        padding: 0 5px;
+        text-align: center;
+    }
+
+    .seccion-logo img.logotipo {
+        max-width: 100px;
+    }
+
+    .seccion-social .iconos-redes-sociales {
+        gap: 6px;
+    }
+
+    .seccion-social .iconos-redes-sociales img {
+        width: 16px;
+        height: 16px;
+    }
+}

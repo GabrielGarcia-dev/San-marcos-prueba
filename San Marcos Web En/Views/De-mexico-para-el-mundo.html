@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Mexico to the World</title>
+    <link rel="stylesheet" href="/San Marcos Web En/Styles/De-mexico-para-el-mundo.css">
+    <link rel="stylesheet" href="./Footer/footer.css">
+    <link rel="stylesheet" href="./Header/header.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/San Marcos Web En/Views/Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+    
+                    // Ejecutar los scripts en el HTML inyectado
+                    const scripts = document.querySelectorAll('#header-placeholder script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+    
+                    // Agregar eventos o manipular elementos si es necesario
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching header:', error));
+        });
+    </script>
+    <div class="image-container">
+        <img src="/San Marcos Web En/Images/De-mexico-para-el-mundo/imagendefondo.jpg" alt="Background Image" class="imagen-line full-width-image">
+    </div>
+    
+    <h1 class="title">From Mexico to the World</h1>
+
+    <div class="content-container">
+        <p>
+            In 1949, in Puebla, Mexico, we took the first steps in canning, laying the groundwork for our renowned canned products today. Our dedication to food quality, especially our chilies, has made us the preferred brand for all Mexican families. Behind our success is a network of collaborators committed to flavor and the highest standards. What began in the 1950s with the distribution of serrano chilies has evolved into a company with over 123 products reaching various countries. We have achieved many dreams, but our determination to bring traditional Mexican flavor to every table and kitchen, both within and outside Mexico, is stronger than ever.
+        </p>
+        <p>
+            We appreciate the trust that Mexican families have placed in us as their favorite brand. It is an honor to be part of their most special moments and it motivates us to continue improving. We are determined to remain the preferred choice, offering authentic Mexican flavor in each of our products. We continue to work hard to realize more dreams and extend our legacy to as many corners of the world as possible. Our goal is for our traditional Mexican flavor to make a mark across borders and delight people around the world.
+        </p>
+        <p>
+            Thank you for being part of our journey and for allowing us to be present in your lives. Together, we will continue to elevate the spirit of Mexican cuisine to new heights.
+        </p>
+    </div>
+
+    <div class="video-container">
+        <iframe width="1120" height="480" src="https://www.youtube.com/embed/NaHxr9PDrs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div class="image-container">
+        <img src="/San Marcos Web En/Images/De-mexico-para-el-mundo/pleca-salsas.webp" alt="Sauce Line" class="img-fluid full-width-image">
+    </div>
+
+    <div class="image-lineaa">
+        <img src="../Images/De-mexico-para-el-mundo/image004.png" alt="Sauce Line" class="imagen-linea">
+    </div>
+
+    <div class="purpose-container">
+        <div class="purpose-box">
+            <h3>Our Purpose</h3>
+        </div>
+    </div>
+    
+    <div class="text-box">
+        <p>To be the food company with the strongest and fastest-growing brands in the country, bringing the heritage and flavor of Mexico to the world</p>
+    </div>
+    
+    <h3 class="values-title">Our Values</h3>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <h4 class="box-title">I Take Ownership</h4>
+            <p class="box-text">We are entrepreneurs, creating new and better opportunities.</p>
+        </div>
+        <div class="grid-item">
+            <h4 class="box-title">Dream Big</h4>
+            <p class="box-text">We believe everything is possible and make it a reality</p>
+        </div>
+        <div class="grid-item">
+            <h4 class="box-title">I Am Passionate About What I Do</h4>
+            <p class="box-text">We are passionate about what we do, working with energy and a sense of urgency.</p>
+        </div>
+        <div class="grid-item">
+            <h4 class="box-title">I Am Integrity</h4>
+            <p class="box-text">We are transparent, do not take shortcuts, and always do what is right with our team, suppliers, and customers.</p>
+        </div>
+        <div class="grid-item">
+            <h4 class="box-title">I Am Excellent</h4>
+            <p class="box-text">We seek continuous learning, achieve results as a team, and with the best talent.</p>
+        </div>
+        <div class="grid-item">
+            <h4 class="box-title">I Have Discipline</h4>
+            <p class="box-text">Through management, adherence to processes and routines, we ensure sustainable results.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product View</title>
+    <link rel="stylesheet" href="./Vinagre.css">
+    <link rel="stylesheet" href="/San Marcos Web En/Views/Header/header.css">
+    <link rel="stylesheet" href="/San Marcos Web En/Views/Footer/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Header/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    const menuIcon = document.getElementById('menuIcon');
+                    const menuDropdown = document.getElementById('menuDropdown');
+
+                    menuIcon.addEventListener('click', function() {
+                        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+                            menuDropdown.style.display = "block";
+                        } else {
+                            menuDropdown.style.display = "none";
+                        }
+                    });
+                });
+        });
+    </script>
+
+    <div class="product-container">
+        <div class="product-info">
+            <h2 id="product-category">White Vinegar</h2>
+            <p id="product-description">The perfect ally to enhance flavors and add that touch of acidity that characterizes our favorite dishes. Our white vinegar is made with the highest quality, ensuring a fresh and balanced taste in every drop. From dressing salads to marinating meats and poultry, this vinegar is the secret to giving your culinary creations a special touch. Join us and discover how our San Marcos white vinegar can elevate your dishes to new heights of flavor and delight. Get ready to enjoy an explosion of tangy and delicious flavors in every bite!</p>
+        </div>
+        <br>
+        <div class="product-details">
+            <div class="product-text">
+                <p id="product-weight">600ml | 1.1L | 4L</p>
+                <h1 id="product-title">White Vinegar</h1>
+                <p id="product-info">Our cane alcohol white vinegar is carefully fermented to achieve the ideal flavor that helps enhance the taste of your food.</p>
+                <a id="product-link" href="./Info-vinagre.html">
+                    <button class="button01">
+                        <span>SEE MORE ></span>
+                    </button>
+                </a>
+            </div>
+            <div class="product-image">
+                <img id="product-image" src="./Image-vinagre/AnyConv.com__famvinagre2.webp" alt="White Vinegar">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div id="footer"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+    <script src="./Vinagre.js"></script>
+</body>
+</html>

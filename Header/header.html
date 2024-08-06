@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../Header/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Header Example</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-icon" id="menuIcon">
+                <span class="menu-bars">&#9776;</span>
+                <ul class="menu-dropdown" id="menuDropdown">
+                    <li><a href="../Index.html">Inicio</a></li>
+                    <li><a href="/San Marcos Web Es/Views/Nuestros-productos.html">Productos</a></li>
+                    <li><a href="/San Marcos Web Es/Views/De-cocina-y-mas.html">De cocina y más</a></li>
+                    <li><a href="/San Marcos Web Es/Views/De-mexico-para-el-mundo.html">Nosotros</a></li>
+                    <li><a href="/Views/Etica-proyecto.html">Ética</a></li>
+                    <li><a href="/San Marcos Web Es/Views/Reporte-Sostenibilidad.html">Sostenibilidad</a></li>
+                    <li><a href="/San Marcos Web Es/Views/Atencion-clientes.html">Contacto</a>
+                        <ul class="submenu">
+                            <li><a href="/San Marcos Web Es/Views/Atencion-clientes.html">Atención a clientes</a></li>
+                            <li><a href="/San Marcos Web Es/Views/Parte-del-Equipo.html">Sé parte del equipo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="/Index.html"><img src="/Header/Images/logo_sanmarcos.svg" alt="San Marcos"></a>
+            </div>
+            <div class="search-lang">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <div class="search">
+                        <input type="text" placeholder="Buscar...">
+                    </div>
+                </div>
+                <div class="languages">
+                    <a href="/San Marcos Web Es/Index.html">
+                        <img src="/Header/Images/bandera.png" alt="Español">
+                    </a>
+                    <a href="/San Marcos Web En/Index.html">
+                        <img src="/Header/Images/australia.png" alt="Inglés">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const menuDropdown = document.getElementById('menuDropdown');
+
+    menuIcon.addEventListener('click', function() {
+        if (menuDropdown.style.display === "none" || menuDropdown.style.display === "") {
+            menuDropdown.style.display = "block";
+        } else {
+            menuDropdown.style.display = "none";
+        }
+    });
+});
+
+
+        // script.js
+document.querySelector('.search-icon').addEventListener('click', function() {
+    const search = document.querySelector('.search');
+    const input = search.querySelector('input');
+    
+    // Función para cerrar el input
+    function closeInput() {
+        search.style.width = '0';
+    }
+
+    if (search.style.width === '0px' || search.style.width === '') {
+        search.style.width = '200px'; // Ancho final del input
+        input.focus();
+        
+        // Limpiar el temporizador si ya existe uno
+        clearTimeout(search.dataset.timeoutId);
+        
+        // Establecer un nuevo temporizador para cerrar el input
+        search.dataset.timeoutId = setTimeout(() => {
+            if (input.value === '') {
+                closeInput();
+            }
+        }, 5000); // 5000 ms = 5 segundos
+    } else {
+        search.style.width = '0';
+    }
+});
+
+// Limpiar el temporizador si se detecta texto
+document.querySelector('.search input').addEventListener('input', function() {
+    const search = document.querySelector('.search');
+    clearTimeout(search.dataset.timeoutId); // Limpiar el temporizador si hay texto
+});
+
+    </script>
+</body>
+</html>

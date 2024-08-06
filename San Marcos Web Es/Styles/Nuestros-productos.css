@@ -1,0 +1,169 @@
+html, body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0; 
+    padding-bottom: 145px; 
+    height: 100%;
+}
+
+#header-placeholder {
+    position: relative;
+    z-index: 1;
+}
+
+.Separator01 {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.wrapper {
+    position: relative; 
+    margin-top:0px; 
+}
+
+.Background01 {
+    width: 100%;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.Separator02 {
+    width: 100%;
+    height: 22px;
+    margin-top: -50px; 
+}
+
+.section01 {
+    margin-top: 15px;
+    margin-bottom: 10px; 
+    font-size: 40px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 866;
+    font-style: normal;
+    
+}
+
+.Separator03 {
+    width: 170px;
+    height: 17px;
+    margin-top: 0; 
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px 150px; 
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto; 
+    justify-content: center;
+}
+
+.categoria {
+    text-decoration: none;
+    text-align: center;
+    padding: 20px; 
+    transition: transform 0.3s, filter 0.3s, opacity 0.6s;
+}
+
+.categoria img {
+    width: 270px; 
+    height: 270px;
+    object-fit: cover;
+    opacity: 0.9; 
+    transition: transform 0.3s, filter 0.3s, opacity 0.3s;
+}
+
+.categoria h2 {
+    color: #000000;
+    font-size: 35px;
+    margin: 10px 0 0;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 866;
+    font-style: normal;
+}
+
+.Separator04 {
+    background-color: #0f0f0f00;
+    width: 100%;
+    height: 200px;
+    transform: rotate(180deg);
+}
+
+.background001 {
+    background: url('../Images/Nuestros-productos/molletes.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 450px; 
+    z-index: 0; 
+}
+
+
+@media (max-width: 768px) {
+    .section01 {
+        font-size: 30px;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .categoria img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .categoria h2 {
+        font-size: 25px;
+    }
+
+    .Separator02 {
+        height: 15px;
+    }
+
+    .background001 {
+        height: 300px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    html, body {
+        padding-bottom: 100px;
+    }
+
+    .section01 {
+        font-size: 24px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .categoria img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .categoria h2 {
+        font-size: 20px;
+    }
+
+    .Separator02 {
+        height: 10px;
+    }
+
+    .background001 {
+        height: 200px;
+    }
+}
+

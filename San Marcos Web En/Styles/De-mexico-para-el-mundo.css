@@ -1,0 +1,258 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-link:hover {
+    background: #1d4075;
+    border-radius: 4px;
+}
+.image-container {
+    width: 100%;
+    height: auto;
+}
+.full-width-image {
+    width: 100%;
+    height: auto;
+}
+.title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5em;
+    color: #091F3F;
+    font-weight: bold; 
+}
+.content-container {
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 90%;
+    line-height: 1.5;
+    color: #333;
+    font-size: 1.1em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+.timeline-container {
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+}
+
+.timeline-content {
+    background-color: #ffffff;
+    border-left: 2px solid #091F3F;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline-content h3 {
+    color: #091F3F;
+    margin-top: 0;
+}
+
+.timeline-content p {
+    margin: 10px 0 0;
+    color: #333333;
+}
+.timeline-container h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 28px; 
+    font-weight: bold; 
+    color: #091F3F; 
+    margin: 20px 0; 
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #091F3F; 
+    padding-bottom: 10px; 
+}
+.purpose-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.purpose-box {
+    background-color: #091F3F;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    width: 70%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.purpose-box h3 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.text-box {
+    background-color: #091F3F;
+    color: #ffffff;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.text-box p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.values-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #091F3F;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 20px 0;
+    border-bottom: 2px solid #091F3F;
+    padding-bottom: 10px;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 98%;
+}
+
+.grid-item {
+    width: calc(16.66% - 10px);
+    background-color: #091F3F;
+    color: #ffffff;
+    text-align: center;
+    padding:  10px 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 250px;
+}
+
+.grid-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; 
+    background-color: rgb(252, 252, 6); 
+}
+
+.box-title {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.box-text {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid-item:hover .box-text {
+    opacity: 1;
+}
+
+.image-lineaa {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.imagen-linea {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 20px; 
+    }
+
+    .title {
+        font-size: 2em; 
+    }
+
+    .content-container {
+        padding: 20px; 
+        font-size: 1em; 
+    }
+
+    .video-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .timeline-container {
+        padding: 0 10px; 
+    }
+
+    .timeline {
+        max-width: 100%; 
+    }
+
+    .timeline-item {
+        margin-bottom: 20px; 
+    }
+
+    .purpose-box {
+        width: 90%; 
+    }
+
+    .text-box {
+        width: 90%; 
+    }
+
+    .values-title {
+        font-size: 20px; 
+    }
+
+    .grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-item {
+        width: calc(50% - 10px);
+        height: 200px;
+    }
+
+    .imagen-linea {
+        width: 100%;
+    }
+}
+
+
+
