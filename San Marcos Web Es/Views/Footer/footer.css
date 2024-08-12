@@ -82,8 +82,8 @@ footer {
 }
 
 .seccion-social .iconos-redes-sociales a {
-    font-size: 24px; /* Ajusta el tamaño según tus necesidades */
-    color: #fff; /* Iconos blancos */
+    font-size: 24px;
+    color: #fff;
     transition: transform 0.3s;
 }
 
@@ -92,17 +92,17 @@ footer {
 }
 
 .seccion-social .numero-telefono {
-    margin-top: 10px; /* Asegúrate de que haya suficiente espacio debajo de los iconos de redes sociales */
+    margin-top: 10px;
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre el icono y el número */
+    gap: 8px;
     justify-content: center;
 }
 
 .seccion-social .numero-telefono i {
-    font-size: 20px; /* Tamaño del icono */
-    color: #fff; /* Icono blanco */
+    font-size: 20px;
+    color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -113,20 +113,37 @@ footer {
     }
 
     .seccion-footer {
-        padding: 15px;
         text-align: center;
+        padding: 10px 0;
     }
 
     .seccion-logo img.logotipo {
-        max-width: 120px;
+        max-width: 150px;
+    }
+
+    .seccion-logo .desde {
+        margin-top: 5px;
+    }
+
+    .seccion-enlaces ul li, .seccion-contacto ul li {
+        margin-bottom: 5px;
+    }
+
+    .seccion-social {
+        margin-top: 10px;
     }
 
     .seccion-social .iconos-redes-sociales {
         gap: 8px;
+        margin-bottom: 10px;
     }
 
     .seccion-social .iconos-redes-sociales a {
         font-size: 20px;
+    }
+
+    .seccion-social .numero-telefono {
+        margin-top: 5px;
     }
 
     .seccion-social .numero-telefono i {
@@ -134,35 +151,9 @@ footer {
     }
 
     footer {
-        padding: 25px 0;
-        font-size: 12px;
+        padding: 5px 0;
+        font-size: 18px;
     }
 }
 
-@media (max-width: 480px) {
-    footer {
-        padding: 20px 0;
-        font-size: 11px;
-    }
 
-    .contenedor {
-        padding: 0 5px;
-        text-align: center;
-    }
-
-    .seccion-logo img.logotipo {
-        max-width: 100px;
-    }
-
-    .seccion-social .iconos-redes-sociales {
-        gap: 6px;
-    }
-
-    .seccion-social .iconos-redes-sociales a {
-        font-size: 16px;
-    }
-
-    .seccion-social .numero-telefono i {
-        font-size: 16px;
-    }
-}

@@ -1,0 +1,68 @@
+/* Asegúrate de que html y body también ocupen el 100% de la altura del viewport */
+html, body {
+    height: 100%;
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column; /* Coloca el h1 encima del contenido principal */
+    align-items: center; /* Centra horizontalmente el contenido */
+    height: 100vh; /* Asegura que ocupe el 100% de la altura del viewport */
+    padding: 0 20px; /* Padding horizontal */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo de la altura */
+}
+
+/* Estilo del h1 */
+.container h1 {
+    margin-bottom: 0; /* Elimina el espacio entre el h1 y el contenedor de contenido */
+}
+
+/* Contenedor que agrupa los dos contenedores laterales */
+.content-wrapper {
+    display: flex;
+    justify-content: center; /* Centra los contenedores laterales */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+    height: 500px; /* Altura fija de 500px */
+    align-items: center; /* Alinea los contenedores a la misma altura verticalmente */
+    margin: 0; /* Elimina el margen superior e inferior */
+    padding: 0; /* Elimina el padding interno */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo de la altura */
+}
+
+/* Estilos para los contenedores izquierdo y derecho */
+.container-left,
+.container-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido dentro de cada contenedor */
+    margin: 0 20px; /* Espacio horizontal entre los contenedores */
+    flex: 1; /* Permite que ambos contenedores crezcan igualmente */
+}
+
+/* Estilo para los iconos */
+.container-left i,
+.container-right i {
+    font-size: 3rem; /* Ajusta el tamaño del icono según tus necesidades */
+    margin-bottom: 10px; /* Espacio entre el icono y el título */
+}
+
+/* Estilo opcional para alinear el texto dentro de los contenedores */
+.container-left h2,
+.container-left p,
+.container-right h2,
+.container-right p {
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Elimina el subrayado de los enlaces y restablece su estilo por defecto */
+.container-left a,
+.container-right a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: inherit; /* Hereda el color del elemento padre para evitar que los enlaces cambien de color */
+    display: flex;
+    flex-direction: column; /* Alinea el contenido dentro del enlace */
+    align-items: center; /* Centra el contenido dentro del enlace */
+}

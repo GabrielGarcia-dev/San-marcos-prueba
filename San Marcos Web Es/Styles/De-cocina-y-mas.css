@@ -173,8 +173,8 @@ body {
 }
 
 .button:hover {
-    background-color: #08476F; /* Color de fondo cuando se pasa el cursor */
-    color: #ffffff; /* Color del texto cuando se pasa el cursor */
+    background-color: #08476F; 
+    color: #ffffff; 
 }
 
 .video-section {
@@ -193,20 +193,20 @@ body {
 
 .contenido2 {
     text-align: center;
-    width: 98%; /* Cambiado de 60% a 98% */
+    width: 98%; 
     margin: 120px auto 0;
 }
 
 .titulo2 {
     margin: -100px auto 0;
-    text-align: center; /* Centra el contenido del contenedor */
+    text-align: center; 
 }
 
 .linea-amarilla {
     width: 150px;
     height: 15px;
     background: linear-gradient(to right, #FFED02, #FED000);
-    margin: -20px auto 30px; /* Centra horizontalmente y ajusta el margen superior */
+    margin: -20px auto 30px;
 }
 
 

@@ -18,7 +18,6 @@
                 .then(data => {
                     document.getElementById('header-placeholder').innerHTML = data;
     
-                    // Ejecutar los scripts en el HTML inyectado
                     const scripts = document.querySelectorAll('#header-placeholder script');
                     scripts.forEach(script => {
                         const newScript = document.createElement('script');
@@ -26,7 +25,6 @@
                         document.body.appendChild(newScript);
                     });
     
-                    // Agregar eventos o manipular elementos si es necesario
                     const menuIcon = document.getElementById('menuIcon');
                     const menuDropdown = document.getElementById('menuDropdown');
                     menuIcon.addEventListener('click', function() {
@@ -52,7 +50,9 @@
     <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
     <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
-    <div class="contenido">
+
+
+<div class="contenido">
         <div class="titulo">
             <h1>Cocina con San Marcos</h1>
         </div>
@@ -182,7 +182,7 @@
             </div>
         </div>
     </div>
-    
+    <br>
     <div class="container02">
         <div class="contenido3">
             <div class="titulo3">

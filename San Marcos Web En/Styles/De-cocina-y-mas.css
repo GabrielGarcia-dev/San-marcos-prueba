@@ -308,6 +308,12 @@ body {
 
 
 @media (max-width: 768px) {
+
+    .bienvenida img{
+        width: 100%;
+        height: auto;
+    }
+
     .contenido, .contenido2 {
         width: 100%;
     }
@@ -319,7 +325,7 @@ body {
 
     .icon-item img {
         width: 100px;
-        height: 100px;
+        height: auto;
     }
 
     .container2{

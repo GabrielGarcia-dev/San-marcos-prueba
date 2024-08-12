@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px; /* Espacio entre el texto y la imagen */
+    gap: 100px;
     padding: 20px;
 }
 
@@ -62,6 +62,77 @@
     width: 600px;
     height: 370px;
 }
+
+
+
+.container02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+h1 {
+    margin: 0;
+    color:#081e40;
+    font-family: "Arial", sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.image02 {
+    justify-items: flex-start;
+}
+
+.image02 img {
+    max-width: 60%;
+    height: auto;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.text02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text02 p {
+    margin-bottom: 20px;
+}
+
+.text02 button {
+    background-color: yellow;
+    border: none;
+    color: #0A2447;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text02 button:hover {
+    background-color: #0A2447;
+    color: rgb(255, 255, 255);
+}
+
+
 
 
 .slider-standars {
@@ -120,7 +191,7 @@
 
 
 @media (max-width: 767px) {
-    /* Estilos para el contenedor de bienvenida */
+   
     .welcome-container {
         flex-direction: column;
         align-items: flex-start;
@@ -136,7 +207,7 @@
         height: auto;
     }
 
-    /* Ajustes para el contenedor principal */
+   
     .container01 {
         padding: 10px;
     }
@@ -146,10 +217,10 @@
         padding: 10px 0;
     }
 
-    /* Ajustes para el subcontenedor */
+   
     .sub-container01 {
         flex-direction: column;
-        gap: 20px; /* Reduce el espacio entre el texto y la imagen */
+        gap: 20px;
         padding: 10px;
     }
 
@@ -160,11 +231,11 @@
 
     .text01 p {
         margin-bottom: 10px;
-        text-align: center; /* Centra el texto en móviles */
+        text-align: center;
     }
 
     .text01 button {
-        width: 100%; /* Asegura que el botón ocupe el ancho completo en móviles */
+        width: 100%;
         padding: 10px;
         font-size: 1rem;
     }
@@ -174,7 +245,7 @@
         color: rgb(255, 255, 255);
     }
 
-    /* Ajustes para la imagen */
+   
     .image01 img {
         width: 100%;
         height: auto;

@@ -62,11 +62,10 @@ body {
     margin: 20px auto;
 }
 
-.titulo {
-    font-family: "Public Sans", sans-serif;
-    font-optical-sizing: auto;
+.titulo h1{
+    font-family: "Arial", sans-serif;
     font-weight: 900;
-    font-style: normal;
+    color: #081e40;
 }
 
 .descripcion {
@@ -345,13 +344,9 @@ button:hover::before {
 }
 
 .titulo3 h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff;
-    text-align: center;
-    line-height: 1.2;
-    font-family: "Public Sans", sans-serif;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    font-weight: 800;
 }
 
 .container6 {
@@ -443,8 +438,10 @@ button:hover::before {
     height: 100%;
     padding: 0;
     margin: 0;
-    position: relative;
+    position: relative; 
+    border-bottom: 18px solid yellow;
 }
+
 
 .slider001 {
     width: 96%;
@@ -456,9 +453,9 @@ button:hover::before {
 
 .slider001 .slide-track {
     display: flex;
-    animation: scroll 40s linear infinite;
-    -webkit-animation: scroll 40s linear infinite;
-    width: calc(200px * 14);
+    animation: scroll 30s linear infinite;
+    -webkit-animation: scroll 30s linear infinite;
+    width: calc(200px * 16);
 }
 
 .slider001 .slide001 {

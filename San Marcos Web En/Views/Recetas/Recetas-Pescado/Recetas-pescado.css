@@ -5,10 +5,11 @@ body, html {
 }
 
 #header-placeholder {
+    position: absolute; /* o absolute, dependiendo de tus necesidades */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 9999; /* Asegúrate de que este valor sea mayor que el de cualquier otro elemento en tu página */
 }
 
 .container1 {
@@ -19,21 +20,26 @@ body, html {
     padding: 20px;
 }
 
-.container1 .titulo {
-    font-weight: 700;
-    font-size: 36px;
+.container1 {
     margin-bottom: 20px;
     color: #444;
 }
 
+.titulo {
+    font-size: 32px;
+    color: #081e40;
+    font-family: "Arial", Sans-serif;
+    font-weight: 800;
+}
+
 .container1 p {
-    font-size: 18px;
+    font-size: 15px;
     width: 80%; 
-    margin-left: auto; 
-    margin-right: auto; 
     text-align: center; 
     line-height: 1.6;
 }
+
+
 
 .grid-container {
     display: grid;
